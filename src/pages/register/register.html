@@ -1,0 +1,44 @@
+<!--
+  Generated template for the Register page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Inscription</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="registrationForm">
+
+    <ion-item>
+      <ion-input type="text" placeholder="Nom" formControlName="firstname" [(ngModel)]="firstname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Prénom" formControlName="lastname" [(ngModel)]="lastname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="mail" placeholder="E-mail" formControlName="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Mot de passe" formControlName="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Mot de passe" formControlName="verif" [(ngModel)]="verif"></ion-input>
+    </ion-item>
+
+    <button ion-button (click)="register()" [disabled]="!registrationForm.valid" block>S'inscrire</button>
+
+  </form>
+
+</ion-content>
