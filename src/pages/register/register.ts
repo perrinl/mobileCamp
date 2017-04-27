@@ -42,9 +42,6 @@ export class RegisterPage {
         firstName: this.firstname,
         lastName: this.lastname
       }).subscribe((data) => this.message_error = data, (err) => {
-        console.log(err)
-        console.log(err._body)
-        console.log(err._body.message)
         this.showAlert(err._body);
       });
     }
