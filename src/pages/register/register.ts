@@ -3,12 +3,6 @@ import { IonicPage, AlertController } from 'ionic-angular';
 import {FormBuilder, Validators} from "@angular/forms";
 import {LoginService} from '../../providers/login-service';
 
-/**
- * Generated class for the Register page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-register',
@@ -42,7 +36,7 @@ export class RegisterPage {
         firstName: this.firstname,
         lastName: this.lastname
       }).subscribe((data) => this.message_error = data, (err) => {
-        this.showAlert(err._body);
+        this.showAlert("Erreur lors de l'inscription");
       });
     }
     else

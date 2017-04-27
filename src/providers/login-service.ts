@@ -5,24 +5,7 @@ import {Http, RequestOptions, Headers} from "@angular/http";
 
 @Injectable()
 export class LoginService {
-    public data:any;
-  private tab: {email:string, password:string}[];
-
   constructor(private http:Http) {
-    this.tab = [
-      {email:"banane", password:"123"},
-      {email:"banane2", password:"123"},
-      ];
-  }
-
-  isRegistered(user: {email:string, password:string}): boolean{
-    let registered: boolean = false;
-    this.tab.forEach((tmp: {email:string, password:string}) => {
-      if (user.email == tmp.email && user.password == tmp.password) {
-        registered = true;
-      }
-    });
-    return registered;
   }
 
   login(user:{email:string, password:string}) {
@@ -38,6 +21,5 @@ export class LoginService {
     return this.http.post("http://172.16.29.62:3000/users", JSON.stringify(user), options)
       .map(response => response.json());
   }
-
 
 }
