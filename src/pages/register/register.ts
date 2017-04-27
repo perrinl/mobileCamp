@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, AlertController } from 'ionic-angular';
 import {FormBuilder, Validators} from "@angular/forms";
-import {LoginService} from '../../providers/login-service'
+import {LoginService} from '../../providers/login-service';
 
 /**
  * Generated class for the Register page.
@@ -20,6 +20,7 @@ export class RegisterPage {
   private email: string;
   private password: string;
   private verif: string;
+  message_error: any[];
 
   public registrationForm:any;
 
@@ -35,16 +36,26 @@ export class RegisterPage {
 
   register() {
     if (this.password == this.verif) {
-      this.loginService.register({email: this.email, password: this.password, firstName: this.firstname, lastName: this.lastname});
+      this.loginService.register({
+        email: this.email,
+        password: this.password,
+        firstName: this.firstname,
+        lastName: this.lastname
+      }).subscribe((data) => this.message_error = data, (err) => {
+        console.log(err)
+        console.log(err._body)
+        console.log(err._body.message)
+        this.showAlert(err._body);
+      });
     }
     else
-      this.showAlert();
+      this.showAlert('Les deux mot de passe ne correspondent pas');
   }
 
-  showAlert() {
+  showAlert(message) {
     let alert = this.alertCtrl.create({
       title: 'Erreur !',
-      subTitle: 'Les deux mot de passe ne correspondent pas',
+      subTitle: message,
       buttons: ['OK']
     });
     alert.present();
