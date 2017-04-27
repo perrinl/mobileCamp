@@ -5,6 +5,7 @@ import {TabsPage} from '../tabs/tabs';
 import {FormBuilder, Validators} from "@angular/forms";
 import {RegisterPage} from '../register/register';
 import {Storage} from '@ionic/storage';
+import {JwtHelper} from 'angular2-jwt';
 
 @IonicPage()
 @Component({
@@ -16,20 +17,24 @@ export class LoginPage {
     private password: string;
     private status: number;
     private error: any;
-
+    private id: number;
     public loginForm: any;
+
+    public jwtHelper: JwtHelper;
 
     constructor(public storage: Storage, public navCtrl: NavController, public _form: FormBuilder, public alertCtrl: AlertController, private loginService: LoginService) {
         this.loginForm = this._form.group({
             "email": ["", Validators.required],
             "password": ["", Validators.required],
         });
+        this.jwtHelper = new JwtHelper();
     }
 
     login() {
         this.loginService.login({email: this.email, password: this.password})
             .subscribe((data) => {
                 this.storage.set('token', data.token);
+                this.id = this.jwtHelper.decodeToken(data.token).id
                 this.navCtrl.push(TabsPage);
             }, (err) => {
                 this.error = err;
