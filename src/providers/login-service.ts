@@ -5,7 +5,7 @@ import {Http, RequestOptions, Headers} from "@angular/http";
 
 @Injectable()
 export class LoginService {
-
+    public data:any;
   private tab: {email:string, password:string}[];
 
   constructor(private http:Http) {
@@ -25,11 +25,28 @@ export class LoginService {
     return registered;
   }
 
+  login(user:{email:string, password:string}) {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http.post("http://172.16.29.62:3000/login", JSON.stringify(user), options)
+          .map(response => response.json());
+  }
+
   register(user: {email:string, password:string, firstName:string, lastName:string}) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
+<<<<<<< HEAD
     return this.http.post("http://172.16.29.62:3000/users", JSON.stringify(user), options)
       .map(response => response.json());
+=======
+    this.http.post("http://172.16.29.62:3000/users", JSON.stringify(user), options)
+      .map(response => response.json())
+      .catch((err: Error) => {
+        console.log(err);
+        return Observable.throw('Server error');
+      })
+      .subscribe();
+>>>>>>> 759391a1e89147136096218295d16a8beaaa1892
   }
 
 
