@@ -24312,9 +24312,3 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
-
-page-doctor .button-right {
-  display: block !important;
-  width: 100% !important;
-  text-align: right !important;
-}
