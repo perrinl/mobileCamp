@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-list *ngIf="doctorList && doctorList.length > 0; else addDoctor">
     <div *ngFor="let speciality of typeList">
       <ion-list-header>
@@ -36,8 +39,8 @@
       </ion-item-sliding>
     </div>
   </ion-list>
-  <template #addDoctor>
+  <ng-template #addDoctor>
     <p>Aucun médecin, veuillez ajouter un médecin.</p>
     <button ion-button (click)="redirection_addDoctor()">Ajouter un médecin</button>
-  </template>
+  </ng-template>
 </ion-content>
