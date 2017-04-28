@@ -36,7 +36,7 @@ export class DoctorService {
     console.log(id);
     console.log(localStorage.getItem('token'));
     console.log(localStorage.getItem('id'));
-    return this.http.delete("http://172.16.29.62:3000/users/"+localStorage.getItem('id')+"/doctors/12", options)
+    return this.http.delete("http://172.16.29.62:3000/users/"+localStorage.getItem('id')+"/doctors/"+id, options)
         .map(response => response.json());
   }
 }

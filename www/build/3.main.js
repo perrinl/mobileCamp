@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 328:
+/***/ 333:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__doctor__ = __webpack_require__(109);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoctorModule", function() { return DoctorModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__document__ = __webpack_require__(112);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DocumentModule", function() { return DocumentModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DoctorModule = (function () {
-    function DoctorModule() {
+var DocumentModule = (function () {
+    function DocumentModule() {
     }
-    return DoctorModule;
+    return DocumentModule;
 }());
-DoctorModule = __decorate([
+DocumentModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__doctor__["a" /* DoctorPage */],
+            __WEBPACK_IMPORTED_MODULE_2__document__["a" /* DocumentPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__doctor__["a" /* DoctorPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__document__["a" /* DocumentPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__doctor__["a" /* DoctorPage */]
+            __WEBPACK_IMPORTED_MODULE_2__document__["a" /* DocumentPage */]
         ]
     })
-], DoctorModule);
+], DocumentModule);
 
-//# sourceMappingURL=doctor.module.js.map
+//# sourceMappingURL=document.module.js.map
 
 /***/ })
 

@@ -24312,3 +24312,59 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+page-login .scroll-content {
+  background: url("../../assets/img/home_bg1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: visible !important;
+}
+
+page-login #main-form {
+  position: relative;
+  top: 17%;
+}
+
+page-login .rounded {
+  border-radius: 50px !important;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+page-login *::-webkit-input-placeholder {
+  color: white !important;
+  opacity: 0.7 !important;
+}
+
+page-login #log-button {
+  opacity: 1;
+}
+
+page-login #register {
+  background: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: Tahoma, Geneva, sans-serif;
+  letter-spacing: 0.75px;
+  font-size: 10px;
+}
+
+page-register .scroll-content {
+  background: url("../../assets/img/home_bg1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: visible !important;
+}
+
+page-register .rounded {
+  border-radius: 50px !important;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+page-register *::-webkit-input-placeholder {
+  color: white !important;
+  opacity: 0.7 !important;
+}
+
+page-register #reg-button {
+  opacity: 1;
+}

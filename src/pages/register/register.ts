@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, AlertController } from 'ionic-angular';
+import { IonicPage, AlertController, NavController } from 'ionic-angular';
 import {FormBuilder, Validators} from "@angular/forms";
 import {LoginService} from '../../providers/login-service';
+import {LoginPage} from '../login/login';
 
 @IonicPage()
 @Component({
@@ -18,7 +19,7 @@ export class RegisterPage {
 
   public registrationForm:any;
 
-  constructor(public _form:FormBuilder, public alertCtrl: AlertController, private loginService: LoginService) {
+  constructor(public _form:FormBuilder, public alertCtrl: AlertController, private loginService: LoginService, public navcontroller: NavController) {
     this.registrationForm = this._form.group({
       "firstname":["", Validators.required],
       "lastname":["", Validators.required],
@@ -38,6 +39,7 @@ export class RegisterPage {
       }).subscribe((data) => this.message_error = data, (err) => {
         this.showAlert("Erreur lors de l'inscription");
       });
+      this.navcontroller.push(LoginPage);
     }
     else
       this.showAlert('Les deux mot de passe ne correspondent pas');

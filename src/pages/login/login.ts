@@ -4,6 +4,7 @@ import {LoginService} from '../../providers/login-service';
 import {TabsPage} from '../tabs/tabs';
 import {FormBuilder, Validators} from "@angular/forms";
 import {RegisterPage} from '../register/register';
+import {ResetpasswordPage} from '../resetpassword/resetpassword';
 import {Storage} from '@ionic/storage';
 import {JwtHelper} from 'angular2-jwt';
 
@@ -56,5 +57,9 @@ export class LoginPage {
 
     register_redirection() {
         this.navCtrl.push(RegisterPage);
+    }
+
+    forget_password() {
+        this.navCtrl.push(ResetpasswordPage);
     }
 }

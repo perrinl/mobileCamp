@@ -1,3 +1,39 @@
 page-login {
+  .scroll-content {
+    background: url('../../assets/img/home_bg1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: visible !important;
+  }
 
+  #main-form {
+    position: relative;
+    top: 17%;
+  }
+
+  .rounded {
+    border-radius: 50px !important;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white
+  }
+
+  *::-webkit-input-placeholder {
+    color: white !important;
+    opacity: 0.7 !important;
+  }
+
+  #log-button {
+    opacity: 1;
+  }
+
+  #register {
+    background: none;
+    color: white;
+    text-transform: uppercase;
+    font-family: Tahoma, Geneva, sans-serif;
+    letter-spacing: 0.75px;
+    font-size: 10px;
+  }
 }

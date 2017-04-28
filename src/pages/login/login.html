@@ -5,20 +5,27 @@
 
 <ion-content padding>
 
-<form [formGroup]="loginForm">
+    <div class="main-logo" style="text-align: center; position: relative; top: 10%">
+        <img src="../../assets/img/logo.png" />
+    </div>
 
-    <ion-item>
-      <ion-input type="mail" formControlName="email" placeholder="E-mail" [(ngModel)]="email"></ion-input>
-    </ion-item>
+    <div id="main-form">
+        <form [formGroup]="loginForm">
 
-    <ion-item>
-      <ion-input type="password" formControlName="password" placeholder="Mot de passe" [(ngModel)]="password"></ion-input>
-    </ion-item>
+            <ion-item class="rounded">
+                <ion-input type="mail" formControlName="email" placeholder="E-mail" [(ngModel)]="email"></ion-input>
+            </ion-item><br/>
 
-    <br><button ion-button [disabled]="!loginForm.valid" (click)="login()">S'identifier</button>
-</form>
-    <p align="left">Mot de passe oublié ?</p>
+            <ion-item class="rounded">
+                <ion-input type="password" formControlName="password" placeholder="Mot de passe" [(ngModel)]="password"></ion-input>
+                <button style="background: none; color: white; z-index: 9" (click)="forget_password()" item-right>Oublié ?</button>
+            </ion-item><br/>
 
-  <button (click)="register_redirection()">S'inscrire</button>
+            <button ion-button round block color="light" id="log-button" [disabled]="!loginForm.valid" (click)="login()">S'identifier</button>
+        </form>
 
+        <p style="text-align: center">
+            <button id="register" (click)="register_redirection()">Ouvrir un compte Capital Santé</button>
+        </p><br/>
+    </div>
 </ion-content>

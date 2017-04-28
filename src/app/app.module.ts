@@ -9,6 +9,7 @@ import { RegisterPage } from '../pages/register/register';
 import { DocumentPage } from '../pages/document/document';
 import { DoctorPage } from '../pages/doctor/doctor';
 import { AddDoctorPage } from '../pages/add-doctor/add-doctor';
+import {ResetpasswordPage} from '../pages/resetpassword/resetpassword'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +29,8 @@ import {CallNumber} from "@ionic-native/call-number";
     DocumentPage,
     DoctorPage,
     AddDoctorPage,
-    DoctorPipe
+    DoctorPipe,
+    ResetpasswordPage
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import {CallNumber} from "@ionic-native/call-number";
     DocumentPage,
     DoctorPage,
     AddDoctorPage,
+    ResetpasswordPage
   ],
   providers: [
     StatusBar,
