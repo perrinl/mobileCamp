@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import {AddDoctorPage} from "../add-doctor/add-doctor";
 import {DoctorService} from "../../providers/doctor-sercice";
 import { CallNumber } from '@ionic-native/call-number';
@@ -13,7 +13,7 @@ export class DoctorPage {
   private doctorList: Object[];
   private typeList: Object[];
 
-  constructor(public doctorService: DoctorService, public callNumber: CallNumber, public loadingCtrl: LoadingController, public navCtrl: NavController, private doctorservice : DoctorService) {
+  constructor(public doctorService: DoctorService, public callNumber: CallNumber, public navCtrl: NavController, private doctorservice : DoctorService) {
   }
 
   ionViewWillEnter() {
@@ -25,6 +25,12 @@ export class DoctorPage {
     });
   }
 
+  doRefresh(refresher) {
+    setTimeout(() => {
+      refresher.complete();
+    }, 1000);
+  }
+
   redirection_addDoctor() {
     this.navCtrl.push(AddDoctorPage);
   }
@@ -34,6 +40,11 @@ export class DoctorPage {
   }
 
   delete(id) {
-    this.doctorService.deleteDoctor(id);
+    this.doctorService.deleteDoctor(id)
+        .subscribe((data) => {
+          this.doctorservice.getDoctors().subscribe((data) => {
+            this.doctorList = data;
+          });
+        }, (err) => console.log(err));
   }
 }
