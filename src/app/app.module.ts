@@ -13,8 +13,11 @@ import { AddDoctorPage } from '../pages/add-doctor/add-doctor';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginService } from '../providers/login-service';
+import { DoctorService } from '../providers/doctor-sercice';
 import {HttpModule} from "@angular/http";
 import {IonicStorageModule} from "@ionic/storage";
+import {DoctorPipe} from "../pipes/doctor";
+import {CallNumber} from "@ionic-native/call-number";
 
 @NgModule({
   declarations: [
@@ -25,12 +28,13 @@ import {IonicStorageModule} from "@ionic/storage";
     DocumentPage,
     DoctorPage,
     AddDoctorPage,
+    DoctorPipe
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,6 +50,8 @@ import {IonicStorageModule} from "@ionic/storage";
     StatusBar,
     SplashScreen,
     LoginService,
+    DoctorService,
+    CallNumber,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

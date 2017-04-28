@@ -8,83 +8,36 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-list-header>
-      Médecin généraliste
-    </ion-list-header>
-
-    <ion-item-sliding>
-      <ion-item>
-        <h2>Alexis Petrio</h2>
-        <p>7 rue Maurice Grandcoing, Ivry-sur-Seine</p>
-        <p>06 01 71 43 60</p>
-      </ion-item>
-      <ion-item-options>
-        <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-        <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-        <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-
-    <ion-item-sliding>
-      <ion-item>
-        <h2>Loïc Perrain</h2>
-        <p>7 rue Maurice Grandcoing, Ivry-sur-Seine</p>
-        <p>06 01 71 43 60</p>
-      </ion-item>
-      <ion-item-options>
-        <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-        <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-        <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-
+  <ion-list *ngIf="doctorList && doctorList.length > 0; else addDoctor">
+    <div *ngFor="let speciality of typeList">
+      <ion-list-header>
+        {{speciality.label}}
+      </ion-list-header>
+      <ion-item-sliding *ngFor="let doctor of doctorList | doctorpipe:speciality.id">
+        <ion-item>
+          <h2>Dr. {{ doctor.lastName }}</h2>
+          <p>{{ doctor.address }}</p>
+          <p>{{ doctor.phone }}</p>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="danger" (click)="delete(doctor.id)" icon-left>
+            <ion-icon name="trash"></ion-icon>
+            Supprimer
+          </button>
+          <button ion-button color="primary" icon-left>
+            <ion-icon name="create"></ion-icon>
+            Modifier
+          </button>
+          <button ion-button color="secondary" (click)="call(doctor.phone)" icon-left>
+            <ion-icon name="call"></ion-icon>
+            Appeler
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
   </ion-list>
-
-  <ion-list>
-    <ion-list-header>
-      Gynécologue
-    </ion-list-header>
-
-    <ion-item-sliding>
-      <ion-item>
-        <h2>Walid El Bouchiqui</h2>
-        <p>7 rue Maurice Grandcoing, Ivry-sur-Seine</p>
-        <p>06 01 71 43 60</p>
-      </ion-item>
-      <ion-item-options>
-        <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-        <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-        <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-
-  </ion-list>
+  <template #addDoctor>
+    <p>Aucun médecin, veuillez ajouter un médecin.</p>
+    <button ion-button (click)="redirection_addDoctor()">Ajouter un médecin</button>
+  </template>
 </ion-content>

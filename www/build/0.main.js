@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 325:
+/***/ 331:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_doctor__ = __webpack_require__(326);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddDoctorModule", function() { return AddDoctorModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(112);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterModule", function() { return RegisterModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddDoctorModule = (function () {
-    function AddDoctorModule() {
+var RegisterModule = (function () {
+    function RegisterModule() {
     }
-    return AddDoctorModule;
+    return RegisterModule;
 }());
-AddDoctorModule = __decorate([
+RegisterModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__add_doctor__["a" /* AddDoctorPage */],
+            __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_doctor__["a" /* AddDoctorPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__add_doctor__["a" /* AddDoctorPage */]
+            __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]
         ]
     })
-], AddDoctorModule);
+], RegisterModule);
 
-//# sourceMappingURL=add-doctor.module.js.map
+//# sourceMappingURL=register.module.js.map
 
 /***/ })
 

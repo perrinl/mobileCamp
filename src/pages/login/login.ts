@@ -33,8 +33,8 @@ export class LoginPage {
     login() {
         this.loginService.login({email: this.email, password: this.password})
             .subscribe((data) => {
-                this.storage.set('token', data.token);
-                this.id = this.jwtHelper.decodeToken(data.token).id
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('id', this.jwtHelper.decodeToken(data.token).id);
                 this.navCtrl.push(TabsPage);
             }, (err) => {
                 this.error = err;

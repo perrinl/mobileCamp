@@ -29,14 +29,12 @@
       <ion-item>
         <ion-label>Spécialité</ion-label>
         <ion-select formControlName="specialite" [(ngModel)]="specialite">
-          <ion-option value="1">Médecin généraliste</ion-option>
-          <ion-option value="2">Dermatologue</ion-option>
-          <ion-option value="3">Gynécologue</ion-option>
+          <ion-option *ngFor="let label of modeKeys" [value]="label.id">{{label.label}}</ion-option>
         </ion-select>
       </ion-item>
 
-      <br><button ion-button [disabled]="!addDoctorform.valid" (click)="ajouter()">Ajouter</button>
-
+      <br><button ion-button (click)="ajouter()">Ajouter</button>
+  <!-- [disabled]="!addDoctorform.valid" -->
     </ion-list>
   </form>
 
