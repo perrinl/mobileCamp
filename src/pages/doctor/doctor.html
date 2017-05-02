@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>Docteurs</ion-title>
     <ion-buttons end>
-      <button (click)="redirection_addDoctor()"><ion-icon name="md-add"></ion-icon></button>
+      <button (click)="redirection_addDoctor()" style="background-color: #f8f8f8"><ion-icon name="add"></ion-icon></button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -11,7 +11,42 @@
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+
   <ion-list *ngIf="doctorList && doctorList.length > 0; else addDoctor">
+    <div *ngFor="let speciality of typeList">
+
+      <ion-list-header>
+        {{speciality.label}}
+      </ion-list-header>
+
+      <ion-item-sliding *ngFor="let doctor of doctorList | doctorpipe:speciality.id">
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="../../assets/img/default_pp.png">
+          </ion-avatar>
+          <h2>Dr. {{ doctor.lastName }}</h2>
+          <p>{{ doctor.address }}</p>
+          <ion-note item-right>{{ doctor.phone }}</ion-note>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="danger" (click)="delete(doctor.id)" icon-left>
+            <ion-icon name="trash"></ion-icon>
+            Supprimer
+          </button>
+          <button ion-button color="primary" icon-left>
+            <ion-icon name="create"></ion-icon>
+            Modifier
+          </button>
+          <button ion-button color="secondary" (click)="call(doctor.phone)" icon-left>
+            <ion-icon name="call"></ion-icon>
+            Appeler
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+  </ion-list>
+
+  <!-- <ion-list *ngIf="doctorList && doctorList.length > 0; else addDoctor">
     <div *ngFor="let speciality of typeList">
       <ion-list-header>
         {{speciality.label}}
@@ -38,7 +73,8 @@
         </ion-item-options>
       </ion-item-sliding>
     </div>
-  </ion-list>
+  </ion-list> -->
+
   <ng-template #addDoctor>
     <p>Aucun médecin, veuillez ajouter un médecin.</p>
     <button ion-button (click)="redirection_addDoctor()">Ajouter un médecin</button>

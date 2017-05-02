@@ -1,13 +1,21 @@
 webpackJsonp([6],{
 
+<<<<<<< HEAD:www/build/6.main.js
 /***/ 337:
+=======
+/***/ 332:
+>>>>>>> fae1852b060e14740521b5d3f25b2fc1534cae62:www/build/6.main.js
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+<<<<<<< HEAD:www/build/6.main.js
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_doctor__ = __webpack_require__(111);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_doctor__ = __webpack_require__(110);
+>>>>>>> fae1852b060e14740521b5d3f25b2fc1534cae62:www/build/6.main.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddDoctorModule", function() { return AddDoctorModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
