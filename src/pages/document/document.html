@@ -11,5 +11,21 @@
 
 
 <ion-content padding>
-
+  <ion-select [(ngModel)]="filterType">
+    <ion-option value="id" selected>id</ion-option>
+    <ion-option value="-id">-id</ion-option>
+    <ion-option value="name">name</ion-option>
+    <ion-option value="-name">-name</ion-option>
+    <ion-option value="price">price</ion-option>
+    <ion-option value="-price">-price</ion-option>
+  </ion-select>
+  <ion-list>
+      <ion-item-sliding *ngFor="let tab of tabs | filter: filterType">
+        <ion-item>
+          <h2>{{ tab.id }}</h2>
+          <p>{{ tab.name }}</p>
+          <p>{{ tab.price }}</p>
+        </ion-item>
+      </ion-item-sliding>
+  </ion-list>
 </ion-content>

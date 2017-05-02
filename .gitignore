@@ -1,3 +1,7 @@
 node_modules/
+<<<<<<< HEAD
 www/build/main.js
 www/build/main.js.map
+=======
+www/
+>>>>>>> alexis

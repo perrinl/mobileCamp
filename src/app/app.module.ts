@@ -16,10 +16,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginService } from '../providers/login-service';
 import { DoctorService } from '../providers/doctor-sercice';
+import { DocumentService } from '../providers/document-service';
 import {HttpModule} from "@angular/http";
 import {IonicStorageModule} from "@ionic/storage";
 import {DoctorPipe} from "../pipes/doctor";
+import {Filter} from "../pipes/filter";
 import {CallNumber} from "@ionic-native/call-number";
+import {Camera, CameraOptions} from "@ionic-native/camera";
+import {FilePath} from '@ionic-native/file-path';
+import {FileChooser} from "@ionic-native/file-chooser";
 
 @NgModule({
   declarations: [
@@ -32,6 +37,7 @@ import {CallNumber} from "@ionic-native/call-number";
     AddDoctorPage,
     AddDocumentPage,
     DoctorPipe,
+    Filter,
     ResetpasswordPage
   ],
   imports: [
@@ -58,6 +64,10 @@ import {CallNumber} from "@ionic-native/call-number";
     LoginService,
     DoctorService,
     CallNumber,
+    DocumentService,
+    Camera,
+    FilePath,
+      FileChooser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
