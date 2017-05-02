@@ -24368,3 +24368,15 @@ page-register *::-webkit-input-placeholder {
 page-register #reg-button {
   opacity: 1;
 }
+
+page-resetpassword .scroll-content {
+  background: url("../../assets/img/home_bg1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: visible !important;
+}
+
+page-resetpassword .rounded {
+  border-radius: 50px !important;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}

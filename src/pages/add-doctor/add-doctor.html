@@ -33,8 +33,8 @@
         </ion-select>
       </ion-item>
 
-      <br><button ion-button (click)="ajouter()">Ajouter</button>
-  <!-- [disabled]="!addDoctorform.valid" -->
+      <br><button [disabled]="!addDoctorform.valid" ion-button (click)="ajouter()">Ajouter</button>
+      
     </ion-list>
   </form>
 
