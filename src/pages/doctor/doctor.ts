@@ -26,6 +26,9 @@ export class DoctorPage {
   }
 
   doRefresh(refresher) {
+    this.doctorservice.getDoctors().subscribe((data) => {
+      this.doctorList = data;
+    });
     setTimeout(() => {
       refresher.complete();
     }, 1000);
