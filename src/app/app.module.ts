@@ -11,6 +11,8 @@ import { DoctorPage } from '../pages/doctor/doctor';
 import { AddDoctorPage } from '../pages/add-doctor/add-doctor';
 import { AddDocumentPage } from '../pages/add-document/add-document';
 import {ResetpasswordPage} from '../pages/resetpassword/resetpassword'
+import {AppointmentPage} from '../pages/appointment/appointment'
+import {AddAppointmentPage} from '../pages/add-appointment/add-appointment'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +24,7 @@ import {IonicStorageModule} from "@ionic/storage";
 import {DoctorPipe} from "../pipes/doctor";
 import {Filter} from "../pipes/filter";
 import {CallNumber} from "@ionic-native/call-number";
-import {Camera, CameraOptions} from "@ionic-native/camera";
+import {Camera} from "@ionic-native/camera";
 import {FilePath} from '@ionic-native/file-path';
 import {FileChooser} from "@ionic-native/file-chooser";
 
@@ -38,7 +40,9 @@ import {FileChooser} from "@ionic-native/file-chooser";
     AddDocumentPage,
     DoctorPipe,
     Filter,
-    ResetpasswordPage
+    ResetpasswordPage,
+    AppointmentPage,
+    AddAppointmentPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,9 @@ import {FileChooser} from "@ionic-native/file-chooser";
     DoctorPage,
     AddDoctorPage,
     AddDocumentPage,
-    ResetpasswordPage
+    ResetpasswordPage,
+    AppointmentPage,
+    AddAppointmentPage
   ],
   providers: [
     StatusBar,
