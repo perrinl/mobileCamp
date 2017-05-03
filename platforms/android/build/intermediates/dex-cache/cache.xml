@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/alexispetrillo/Documents/mobileCamp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/libs/internal_impl-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="/Users/alexispetrillo/Documents/mobileCamp/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.1.1_21de84b5bfd38bf70be47783a1b3d89a4af534b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/alexispetrillo/Documents/mobileCamp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="/Users/alexispetrillo/Documents/mobileCamp/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.1.1_4cb1504729ced17c4976ac85bea8c90d5446e15e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/alexispetrillo/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.1.1/support-annotations-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="/Users/alexispetrillo/Documents/mobileCamp/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-24.1.1_2d726d2df32bad63091016c9b1252a1d5abfc0b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/alexispetrillo/Documents/mobileCamp/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="afe8eb4906b94df000e2b3714c864ec42d4e4ea6">
+        <dex dex="/Users/alexispetrillo/Documents/mobileCamp/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_9bc85f318ea0c4aa404d68261e80e13cfe784494.jar" />
+    </item>
+
+</items>
