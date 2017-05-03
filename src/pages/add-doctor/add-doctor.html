@@ -12,29 +12,30 @@
     <ion-list>
 
       <ion-item>
-        <ion-label fixed>Nom</ion-label>
+        <ion-label stacked>Nom</ion-label>
         <ion-input type="text" formControlName="nom" [(ngModel)]="nom"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>Téléphone</ion-label>
+        <ion-label stacked>Téléphone</ion-label>
         <ion-input type="text" formControlName="telephone" [(ngModel)]="telephone"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>Adresse</ion-label>
+        <ion-label stacked>Adresse</ion-label>
         <ion-input type="text" formControlName="adresse" [(ngModel)]="adresse"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Spécialité</ion-label>
+        <ion-label stacked>Spécialité</ion-label>
         <ion-select formControlName="specialite" [(ngModel)]="specialite">
           <ion-option *ngFor="let label of modeKeys" [value]="label.id">{{label.label}}</ion-option>
         </ion-select>
       </ion-item>
+      <br/><br/>
 
-      <br><button [disabled]="!addDoctorform.valid" ion-button (click)="ajouter()">Ajouter</button>
-      
+      <button [disabled]="!addDoctorform.valid" ion-button full (click)="ajouter()">Ajouter</button>
+
     </ion-list>
   </form>
 

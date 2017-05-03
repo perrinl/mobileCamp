@@ -1,10 +1,14 @@
 webpackJsonp([6],{
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 341:
 =======
 /***/ 332:
 >>>>>>> fae1852b060e14740521b5d3f25b2fc1534cae62
+=======
+/***/ 337:
+>>>>>>> 285625ec1002dd583af5aea53156d305d19a7740
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16,7 +20,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddDocumentModule", function() { return AddDocumentModule; });
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_doctor__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_doctor__ = __webpack_require__(111);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddDoctorModule", function() { return AddDoctorModule; });
 >>>>>>> fae1852b060e14740521b5d3f25b2fc1534cae62
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
