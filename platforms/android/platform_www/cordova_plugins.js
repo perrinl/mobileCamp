@@ -34,14 +34,6 @@ module.exports = [
         ]
     },
     {
-        "id": "com.megster.cordova.FileChooser.FileChooser",
-        "file": "plugins/com.megster.cordova.FileChooser/www/fileChooser.js",
-        "pluginId": "com.megster.cordova.FileChooser",
-        "clobbers": [
-            "fileChooser"
-        ]
-    },
-    {
         "id": "cordova-plugin-camera.Camera",
         "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
         "pluginId": "cordova-plugin-camera",
@@ -269,6 +261,49 @@ module.exports = [
         "clobbers": [
             "window.FilePath"
         ]
+    },
+    {
+        "id": "com.megster.cordova.FileChooser.FileChooser",
+        "file": "plugins/com.megster.cordova.FileChooser/www/fileChooser.js",
+        "pluginId": "com.megster.cordova.FileChooser",
+        "clobbers": [
+            "fileChooser"
+        ]
+    },
+    {
+        "id": "de.appplant.cordova.plugin.local-notification.LocalNotification",
+        "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js",
+        "pluginId": "de.appplant.cordova.plugin.local-notification",
+        "clobbers": [
+            "cordova.plugins.notification.local",
+            "plugin.notification.local"
+        ]
+    },
+    {
+        "id": "de.appplant.cordova.plugin.local-notification.LocalNotification.Core",
+        "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-core.js",
+        "pluginId": "de.appplant.cordova.plugin.local-notification",
+        "clobbers": [
+            "cordova.plugins.notification.local.core",
+            "plugin.notification.local.core"
+        ]
+    },
+    {
+        "id": "de.appplant.cordova.plugin.local-notification.LocalNotification.Util",
+        "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-util.js",
+        "pluginId": "de.appplant.cordova.plugin.local-notification",
+        "merges": [
+            "cordova.plugins.notification.local.core",
+            "plugin.notification.local.core"
+        ]
+    },
+    {
+        "id": "mx.ferreyra.callnumber.CallNumber",
+        "file": "plugins/mx.ferreyra.callnumber/www/CallNumber.js",
+        "pluginId": "mx.ferreyra.callnumber",
+        "clobbers": [
+            "call"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -281,11 +316,14 @@ module.exports.metadata =
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-compat": "1.1.0",
-    "com.megster.cordova.FileChooser": "0.0.0",
     "cordova-plugin-camera": "2.4.1",
     "cordova-plugin-file": "4.3.3",
     "cordova-plugin-file-transfer": "1.6.3",
-    "cordova-plugin-filepath": "1.0.2"
+    "cordova-plugin-filepath": "1.0.2",
+    "com.megster.cordova.FileChooser": "0.0.0",
+    "cordova-plugin-app-event": "1.2.0",
+    "de.appplant.cordova.plugin.local-notification": "0.8.4",
+    "mx.ferreyra.callnumber": "0.0.2"
 };
 // BOTTOM OF METADATA
 });

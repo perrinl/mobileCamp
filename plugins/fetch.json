@@ -1,29 +1,4 @@
 {
-    "mx.ferreyra.callnumber": {
-        "source": {
-            "type": "registry",
-            "id": "call-number"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "com.megster.cordova.FileChooser": {
-        "source": {
-            "type": "git",
-            "url": "http://github.com/don/cordova-filechooser.git",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-file-transfer": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-file-transfer@~1.6.3"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "ionic-plugin-keyboard": {
         "source": {
             "type": "registry",
@@ -72,6 +47,14 @@
         "is_top_level": true,
         "variables": {}
     },
+    "cordova-plugin-camera": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-camera@~2.4.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
     "cordova-plugin-compat": {
         "source": {
             "type": "registry",
@@ -80,10 +63,10 @@
         "is_top_level": false,
         "variables": {}
     },
-    "cordova-plugin-camera": {
+    "cordova-plugin-file-transfer": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-camera@~2.4.0"
+            "id": "cordova-plugin-file-transfer@~1.6.3"
         },
         "is_top_level": true,
         "variables": {}
@@ -99,7 +82,40 @@
     "cordova-plugin-filepath": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-filepath"
+            "id": "cordova-plugin-filepath@~1.0.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.megster.cordova.FileChooser": {
+        "source": {
+            "type": "git",
+            "url": "http://github.com/don/cordova-filechooser.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "de.appplant.cordova.plugin.local-notification": {
+        "source": {
+            "type": "registry",
+            "id": "de.appplant.cordova.plugin.local-notification"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-app-event": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-app-event"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "mx.ferreyra.callnumber": {
+        "source": {
+            "type": "registry",
+            "id": "call-number"
         },
         "is_top_level": true,
         "variables": {}

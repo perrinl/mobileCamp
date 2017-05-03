@@ -25,9 +25,6 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
-        "com.megster.cordova.FileChooser": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
@@ -36,6 +33,15 @@
         },
         "cordova-plugin-filepath": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "com.megster.cordova.FileChooser": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         }
     },
     "dependent_plugins": {
@@ -43,6 +49,9 @@
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-app-event": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         }
     }

@@ -1,12 +1,42 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>addAppointment</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Ajouter un rendez-vous</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+
+    <form [formGroup]="addAppointmentForm">
+        <ion-list>
+            <ion-item>
+                <ion-label fixed>Nom</ion-label>
+                <ion-input type="text" formControlName="name" [(ngModel)]="name"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>Date</ion-label>
+                <ion-datetime pickerFormat="D/MMM/YYYY" displayFormat="D/M/YYYY" formControlName="date" [(ngModel)]="date"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>Heure</ion-label>
+                <ion-datetime pickerFormat="HH:mm" formControlName="hour" [(ngModel)]="hour"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Docteur</ion-label>
+                <ion-select formControlName="doctor" [(ngModel)]="doctor">
+                    <ion-option *ngFor="let doctorElement of doctorList" [value]="doctorElement.id">{{doctorElement.lastName}}</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <br>
+            <button [disabled]="!addAppointmentForm.valid" ion-button (click)="addAppointment()">Ajouter</button>
+
+        </ion-list>
+    </form>
+
 
 </ion-content>

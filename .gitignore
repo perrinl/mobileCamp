@@ -1,2 +1,5 @@
 node_modules/
-www/
+www/build/
+plugins/
+platforms/*
+.DS_Store
