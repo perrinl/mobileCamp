@@ -1,4 +1,7 @@
 node_modules/
+<<<<<<< HEAD
 www/
+=======
+>>>>>>> fae1852b060e14740521b5d3f25b2fc1534cae62
 www/build/main.js
 www/build/main.js.map
