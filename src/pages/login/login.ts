@@ -18,7 +18,6 @@ export class LoginPage {
     private password: string;
     private status: number;
     private error: any;
-    private id: number;
     public loginForm: any;
 
     public jwtHelper: JwtHelper;

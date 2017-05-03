@@ -22,10 +22,12 @@ import {IonicStorageModule} from "@ionic/storage";
 import {DoctorPipe} from "../pipes/doctor";
 import {Filter} from "../pipes/filter";
 import {CallNumber} from "@ionic-native/call-number";
-import {Camera, CameraOptions} from "@ionic-native/camera";
+import {Camera} from "@ionic-native/camera";
 import {FilePath} from '@ionic-native/file-path';
 import {FileChooser} from "@ionic-native/file-chooser";
 import {Transfer} from "@ionic-native/transfer";
+import {AddAppointmentPage} from "../pages/add-appointment/add-appointment";
+import {AppointmentPage} from "../pages/appointment/appointment";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {Transfer} from "@ionic-native/transfer";
     AddDocumentPage,
     DoctorPipe,
     Filter,
-    ResetpasswordPage
+    ResetpasswordPage,
+    AppointmentPage,
+      AddAppointmentPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,9 @@ import {Transfer} from "@ionic-native/transfer";
     DoctorPage,
     AddDoctorPage,
     AddDocumentPage,
-    ResetpasswordPage
+    ResetpasswordPage,
+    AppointmentPage,
+    AddAppointmentPage
   ],
   providers: [
     StatusBar,
