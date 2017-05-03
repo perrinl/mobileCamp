@@ -7,11 +7,12 @@ export class DocumentService {
 
   constructor(public http: Http) {}
 
-  addDocument(document: {docteur:number, nature:number, source:number, date:Date, type:string}) {
+  addDocument(document: {name: string, date:Date, fileUrl: string, textContent: string, documentSourceId:number, documentNatureId:number, documentTypeId:number, doctorId:number}) {
+    console.log("");
     let headers = new Headers({ 'Authorization': localStorage.getItem('token'), 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    /*return this.http.post("http://172.16.29.62:3000/users/"+localStorage.getItem('id')+"/doctors", JSON.stringify(doctor), options)
-        .map(response => response.json());*/
+    return this.http.post("http://172.16.29.62:3000/users/"+localStorage.getItem('id')+"/documents", JSON.stringify(document), options)
+        .map(response => response.json());
   }
 
   getNature() {
