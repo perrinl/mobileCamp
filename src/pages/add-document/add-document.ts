@@ -6,7 +6,8 @@ import {DoctorService} from "../../providers/doctor-sercice";
 import {Camera, CameraOptions} from "@ionic-native/camera";
 import {FileChooser} from "@ionic-native/file-chooser";
 import {FilePath} from '@ionic-native/file-path';
-
+import {TransferObject, FileUploadOptions, FileUploadResult, Transfer} from "@ionic-native/transfer";
+import * as mime from 'mime-types';
 
 @IonicPage()
 @Component({
@@ -22,15 +23,19 @@ export class AddDocumentPage {
   public natureList : any[];
   public sourceList : any[];
   public doctorList : any[];
-  public base64Image: string;
-  public type: string;
+  public type: number;
+  public path: string;
+  public nom: string;
+  public textContent: string;
 
-  constructor(public filePath : FilePath, public fileChooser : FileChooser, public plt: Platform, public camera: Camera, public doctorService: DoctorService, public alertCtrl: AlertController, public _form: FormBuilder, public documentService: DocumentService, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public transfer: Transfer, public filePath : FilePath, public fileChooser : FileChooser, public plt: Platform, public camera: Camera, public doctorService: DoctorService, public alertCtrl: AlertController, public _form: FormBuilder, public documentService: DocumentService, public navCtrl: NavController, public navParams: NavParams) {
     this.addDocumentForm = this._form.group({
+      "nom": ["", Validators.required],
       "docteur": ["", Validators.required],
       "nature": ["", Validators.required],
       "source": ["", Validators.required],
       "date": ["", Validators.required],
+      "textContent": [""],
     });
   }
 
@@ -48,15 +53,19 @@ export class AddDocumentPage {
   }
 
   addDocument() {
+    console.log("fileUrl : " + this.path);
     this.documentService.addDocument({
-      docteur: this.docteur,
-      nature: this.nature,
-      source: this.source,
+      name: this.nom,
       date: this.date,
-      type: this.type,
-    })/*.subscribe((data) => this.navCtrl.pop(), (err) => {
+      fileUrl: this.path,
+      textContent: this.textContent,
+      documentSourceId: this.source,
+      documentNatureId: this.nature,
+      documentTypeId: this.type,
+      doctorId: this.docteur,
+    }).subscribe((data) => this.navCtrl.pop(), (err) => {
       this.showAlert("Erreur lors de l'ajout du document");
-    });*/
+    });
   }
 
   showAlert(message) {
@@ -72,7 +81,9 @@ export class AddDocumentPage {
     if (this.plt.is('android')) {
       this.fileChooser.open()
           .then(uri => this.filePath.resolveNativePath(uri)
-              .then(filePath => alert("Fichier ajouté avec succès"))
+              .then(filePath => {
+                this.uploadFile(filePath);
+              })
               .catch(err => console.log(err)))
           .catch(e => console.log(e));
     }
@@ -81,16 +92,35 @@ export class AddDocumentPage {
   cam() {
     const options: CameraOptions = {
       quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
+      destinationType: this.camera.DestinationType.FILE_URI,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
     };
 
     this.camera.getPicture(options).then((imageData) => {
-      this.base64Image = 'data:image/jpeg;base64,' + imageData;
-      console.log(this.base64Image);
+      this.uploadFile(imageData);
     }, (err) => {
       console.log(err);
     });
+  }
+
+  uploadFile(fileData: string) {
+    const fileTransfer: TransferObject = this.transfer.create();
+
+    let options1: FileUploadOptions = {
+      mimeType: mime.lookup(fileData),
+      fileKey: 'file',
+      fileName: fileData.substr(fileData.lastIndexOf('/') + 1),
+      headers: {
+        'Authorization': localStorage.getItem('token')
+      }
+    };
+    fileTransfer.upload(fileData, 'http://172.16.29.62:3000/upload', options1)
+        .then((data : FileUploadResult) => {
+          this.path = 'http://172.16.29.62:3000/' + JSON.parse(data.response).fileName;
+          console.log("Path : " + this.path);
+        }, (err) => {
+          alert("error"+JSON.stringify(err));
+        });
   }
 }

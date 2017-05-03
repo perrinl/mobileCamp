@@ -25,6 +25,7 @@ import {CallNumber} from "@ionic-native/call-number";
 import {Camera, CameraOptions} from "@ionic-native/camera";
 import {FilePath} from '@ionic-native/file-path';
 import {FileChooser} from "@ionic-native/file-chooser";
+import {Transfer} from "@ionic-native/transfer";
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import {FileChooser} from "@ionic-native/file-chooser";
     DocumentService,
     Camera,
     FilePath,
-      FileChooser,
+    FileChooser,
+    Transfer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
