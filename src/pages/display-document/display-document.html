@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>displayDocument</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<p>Nom :{{obj.name}}</p>
+  <p>Date : {{obj.date}}</p>
+  <p>Nature : {{obj.DocumentNature.label}}</p>
+  <p>Source : {{obj.DocumentSource.label}}</p>
+  <p>Type : {{obj.DocumentType.label}}</p>
+  <div *ngIf="obj.DocumentTypeId == 1">
+    <img src="{{obj.fileUrl}}" />
+  </div>
+  <div *ngIf="obj.DocumentTypeId == 2">
+
+  </div>
+  <div *ngIf="obj.DocumentTypeId == 3">
+    <p>{{obj.textContent}}</p>
+  </div>
+
+</ion-content>
