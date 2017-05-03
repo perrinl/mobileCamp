@@ -1,11 +1,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>displayDocument</ion-title>
+    <ion-title>Document</ion-title>
   </ion-navbar>
 
 </ion-header>
-
 
 <ion-content padding>
 <p>Nom :{{obj.name}}</p>
@@ -17,10 +16,10 @@
     <img src="{{obj.fileUrl}}" />
   </div>
   <div *ngIf="obj.DocumentTypeId == 2">
-
+    <p>{{obj.textContent}}</p>
   </div>
   <div *ngIf="obj.DocumentTypeId == 3">
-    <p>{{obj.textContent}}</p>
+
   </div>
 
 </ion-content>

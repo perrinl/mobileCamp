@@ -28,6 +28,8 @@ export class LoginPage {
             "password": ["", Validators.required],
         });
         this.jwtHelper = new JwtHelper();
+        if (localStorage.getItem('token') != null)
+            this.navCtrl.push(TabsPage);
     }
 
     login() {

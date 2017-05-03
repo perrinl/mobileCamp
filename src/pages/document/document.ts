@@ -3,6 +3,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 import {AddDocumentPage} from "../add-document/add-document";
 import {DocumentService} from "../../providers/document-service";
 import {DisplayDocumentPage} from '../display-document/display-document';
+import {LoginPage} from "../login/login";
 
 @IonicPage()
 @Component({
@@ -14,12 +15,13 @@ export class DocumentPage {
   documentList: any[];
 
   constructor(public documentService: DocumentService, public navCtrl: NavController) {
-    this.filterType = "id";
+    this.filterType = "name";
   }
 
   ionViewWillEnter() {
     this.documentService.getDocuments().subscribe((data) => {
       this.documentList = data;
+      this.filterType = "name";
     });
   }
 
@@ -34,6 +36,10 @@ export class DocumentPage {
             this.documentList = data;
           });
         }, (err) => console.log(err));
+  }
+  disconnected() {
+    localStorage.clear();
+    this.navCtrl.push(LoginPage);
   }
 
   displayDocumentRedirection(obj: Object) {
