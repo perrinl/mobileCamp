@@ -34,14 +34,6 @@ module.exports = [
         ]
     },
     {
-        "id": "com.megster.cordova.FileChooser.FileChooser",
-        "file": "plugins/com.megster.cordova.FileChooser/www/fileChooser.js",
-        "pluginId": "com.megster.cordova.FileChooser",
-        "clobbers": [
-            "fileChooser"
-        ]
-    },
-    {
         "id": "cordova-plugin-camera.Camera",
         "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
         "pluginId": "cordova-plugin-camera",
@@ -269,6 +261,14 @@ module.exports = [
         "clobbers": [
             "window.FilePath"
         ]
+    },
+    {
+        "id": "com.megster.cordova.FileChooser.FileChooser",
+        "file": "plugins/com.megster.cordova.FileChooser/www/fileChooser.js",
+        "pluginId": "com.megster.cordova.FileChooser",
+        "clobbers": [
+            "fileChooser"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -281,11 +281,11 @@ module.exports.metadata =
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-compat": "1.1.0",
-    "com.megster.cordova.FileChooser": "0.0.0",
     "cordova-plugin-camera": "2.4.1",
     "cordova-plugin-file": "4.3.3",
     "cordova-plugin-file-transfer": "1.6.3",
-    "cordova-plugin-filepath": "1.0.2"
+    "cordova-plugin-filepath": "1.0.2",
+    "com.megster.cordova.FileChooser": "0.0.0"
 };
 // BOTTOM OF METADATA
 });

@@ -28,6 +28,7 @@ import {FileChooser} from "@ionic-native/file-chooser";
 import {Transfer} from "@ionic-native/transfer";
 import {AddAppointmentPage} from "../pages/add-appointment/add-appointment";
 import {AppointmentPage} from "../pages/appointment/appointment";
+import {AppointmentService} from "../providers/appointment-service";
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import {AppointmentPage} from "../pages/appointment/appointment";
     FilePath,
     FileChooser,
     Transfer,
+    AppointmentService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

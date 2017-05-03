@@ -25,9 +25,6 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
-        "com.megster.cordova.FileChooser": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
@@ -35,6 +32,9 @@
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "com.megster.cordova.FileChooser": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         }
     },
