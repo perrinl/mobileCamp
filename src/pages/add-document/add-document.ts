@@ -37,6 +37,7 @@ export class AddDocumentPage {
       "date": ["", Validators.required],
       "textContent": [""],
     });
+    this.type = 1;
   }
 
   ionViewWillEnter() {

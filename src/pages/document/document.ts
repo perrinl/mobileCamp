@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import {AddDocumentPage} from "../add-document/add-document";
+import {DocumentService} from "../../providers/document-service";
+import {DisplayDocumentPage} from '../display-document/display-document';
 
 @IonicPage()
 @Component({
@@ -8,30 +10,33 @@ import {AddDocumentPage} from "../add-document/add-document";
   templateUrl: 'document.html',
 })
 export class DocumentPage {
-  tabs : any[];
   filterType : string;
+  documentList: any[];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public documentService: DocumentService, public navCtrl: NavController) {
     this.filterType = "id";
-    this.tabs = [{
-      "id": 1,
-      "name": "A green door",
-      "price": 12.50,
-    },
-      {
-        "id": 2,
-        "name": "C green door",
-        "price": 14.50,
-      },
-      {
-      "id": 3,
-        "name": "B green door",
-        "price": 13.50,
-      }];
+  }
+
+  ionViewWillEnter() {
+    this.documentService.getDocuments().subscribe((data) => {
+      this.documentList = data;
+    });
   }
 
   redirection_addDocument() {
     this.navCtrl.push(AddDocumentPage);
   }
 
+  delete(id) {
+    this.documentService.deleteDocument(id)
+        .subscribe((data) => {
+          this.documentService.getDocuments().subscribe((data) => {
+            this.documentList = data;
+          });
+        }, (err) => console.log(err));
+  }
+
+  displayDocumentRedirection(obj: Object) {
+    this.navCtrl.push(DisplayDocumentPage, {document: obj});
+  }
 }

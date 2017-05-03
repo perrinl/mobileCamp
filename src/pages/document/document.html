@@ -14,18 +14,40 @@
   <ion-select [(ngModel)]="filterType">
     <ion-option value="id" selected>id</ion-option>
     <ion-option value="-id">-id</ion-option>
-    <ion-option value="name">name</ion-option>
-    <ion-option value="-name">-name</ion-option>
-    <ion-option value="price">price</ion-option>
-    <ion-option value="-price">-price</ion-option>
+    <ion-option value="DoctorId">Docteur</ion-option>
+    <ion-option value="-DoctorId">-Docteur</ion-option>
+    <ion-option value="name">Nom</ion-option>
+    <ion-option value="-name">-Nom</ion-option>
+    <ion-option value="DocumentTypeId">Type</ion-option>
+    <ion-option value="-DocumentTypeId">-Type</ion-option>
+    <ion-option value="DocumentNatureId">Nature</ion-option>
+    <ion-option value="-DocumentNatureId">-Nature</ion-option>
+    <ion-option value="DocumentSourceId">Source</ion-option>
+    <ion-option value="-DocumentSourceId">-Source</ion-option>
   </ion-select>
   <ion-list>
-      <ion-item-sliding *ngFor="let tab of tabs | filter: filterType">
-        <ion-item>
-          <h2>{{ tab.id }}</h2>
-          <p>{{ tab.name }}</p>
-          <p>{{ tab.price }}</p>
-        </ion-item>
+      <ion-item-sliding *ngFor="let document of documentList | filter: filterType">
+        <button ion-item (click)="displayDocumentRedirection(document)">
+          <h2>Docteur : {{ document.Doctor.lastName }}</h2>
+          <p>id : {{ document.id }}</p>
+          <p>nom du document : {{ document.name }}</p>
+          <p>date : {{ document.date }}</p>
+          <p>type : {{ document.DocumentType.label }}</p>
+          <p>nature : {{ document.DocumentNature.label }}</p>
+          <p>source : {{ document.DocumentSource.label }}</p>
+          <p>file url : {{ document.fileUrl }}</p>
+          <p>textcontent : {{ document.textContent }}</p>
+        </button>
+        <ion-item-options>
+          <button ion-button color="danger" (click)="delete(document.id)" icon-left>
+            <ion-icon name="trash"></ion-icon>
+            Supprimer
+          </button>
+          <button ion-button color="primary" icon-left>
+            <ion-icon name="create"></ion-icon>
+            Modifier
+          </button>
+        </ion-item-options>
       </ion-item-sliding>
   </ion-list>
 </ion-content>

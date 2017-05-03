@@ -11,6 +11,7 @@ import { DoctorPage } from '../pages/doctor/doctor';
 import { AddDoctorPage } from '../pages/add-doctor/add-doctor';
 import { AddDocumentPage } from '../pages/add-document/add-document';
 import {ResetpasswordPage} from '../pages/resetpassword/resetpassword'
+import {DisplayDocumentPage} from '../pages/display-document/display-document'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -43,7 +44,8 @@ import {AppointmentPage} from "../pages/appointment/appointment";
     Filter,
     ResetpasswordPage,
     AppointmentPage,
-      AddAppointmentPage
+    AddAppointmentPage,
+    DisplayDocumentPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ import {AppointmentPage} from "../pages/appointment/appointment";
     AddDocumentPage,
     ResetpasswordPage,
     AppointmentPage,
-    AddAppointmentPage
+    AddAppointmentPage,
+    DisplayDocumentPage
   ],
   providers: [
     StatusBar,
