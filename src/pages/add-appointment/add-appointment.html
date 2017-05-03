@@ -17,7 +17,12 @@
 
             <ion-item>
                 <ion-label fixed>Date</ion-label>
-                <ion-input type="date" formControlName="date" [(ngModel)]="date"></ion-input>
+                <ion-datetime pickerFormat="D/MMM/YYYY" displayFormat="D/M/YYYY" formControlName="date" [(ngModel)]="date"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>Heure</ion-label>
+                <ion-datetime pickerFormat="HH:mm" formControlName="hour" [(ngModel)]="hour"></ion-datetime>
             </ion-item>
 
             <ion-item>
