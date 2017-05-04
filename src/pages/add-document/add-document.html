@@ -27,39 +27,38 @@
       <ion-list>
 
         <ion-item>
-          <ion-label>Nom du document</ion-label>
+          <ion-label stacked>Nom du document</ion-label>
           <ion-input type="text" formControlName="nom" [(ngModel)]="nom"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>Nom du docteur</ion-label>
+          <ion-label stacked>Nom du docteur</ion-label>
           <ion-select formControlName="docteur" [(ngModel)]="docteur">
             <ion-option *ngFor="let doctor of doctorList" [value]="doctor.id">{{doctor.lastName}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label>Nature du document</ion-label>
+          <ion-label stacked>Nature du document</ion-label>
           <ion-select formControlName="nature" [(ngModel)]="nature">
             <ion-option *ngFor="let nature of natureList" [value]="nature.id">{{nature.label}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label>Source du document</ion-label>
+          <ion-label stacked>Source du document</ion-label>
           <ion-select formControlName="source" [(ngModel)]="source">
             <ion-option *ngFor="let source of sourceList" [value]="source.id">{{source.label}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label fixed>Date</ion-label>
+          <ion-label stacked>Date</ion-label>
           <ion-input type="date" formControlName="date" [(ngModel)]="date"></ion-input>
-        </ion-item>
+        </ion-item><br/>
 
-        <button ion-button (click)="cam()">Photo</button>
-
-        <br><button ion-button (click)="addDocument()">Ajouter</button>
+        <button ion-button (click)="cam()"><ion-icon name="camera"></ion-icon></button>
+        <button ion-button id="add-btn" (click)="addDocument()">Valider</button>
       </ion-list>
     </form>
 
@@ -67,79 +66,80 @@
       <ion-list>
 
         <ion-item>
-          <ion-label>Nom du document</ion-label>
+          <ion-label stacked>Nom du document</ion-label>
           <ion-input type="text" formControlName="nom" [(ngModel)]="nom"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>Nom du docteur</ion-label>
+          <ion-label stacked>Nom du docteur</ion-label>
           <ion-select formControlName="docteur" [(ngModel)]="docteur">
             <ion-option *ngFor="let doctor of doctorList" [value]="doctor.id">{{doctor.lastName}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label>Nature du document</ion-label>
+          <ion-label stacked>Nature du document</ion-label>
           <ion-select formControlName="nature" [(ngModel)]="nature">
             <ion-option *ngFor="let nature of natureList" [value]="nature.id">{{nature.label}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label>Source du document</ion-label>
+          <ion-label stacked>Source du document</ion-label>
           <ion-select formControlName="source" [(ngModel)]="source">
             <ion-option *ngFor="let source of sourceList" [value]="source.id">{{source.label}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label fixed>Date</ion-label>
+          <ion-label stacked>Date</ion-label>
           <ion-input type="date" formControlName="date" [(ngModel)]="date"></ion-input>
         </ion-item>
 
-        <ion-label fixed>Description</ion-label>
-        <textarea placeholder="yyy" rows="5" formControlName="textContent" [(ngModel)]="textContent" required></textarea>
+        <ion-item>
+          <ion-label stacked>Description</ion-label>
+          <ion-textarea placeholder="yyy" rows="5" formControlName="textContent" [(ngModel)]="textContent" required></ion-textarea>
+        </ion-item>
 
-        <br><button ion-button (click)="addDocument()">Ajouter</button>
+        <br><button ion-button full (click)="addDocument()">Valider</button>
       </ion-list>
     </form>
 
     <form *ngSwitchCase="3" [formGroup]="addDocumentForm">
       <ion-list>
         <ion-item>
-          <ion-label>Nom du document</ion-label>
+          <ion-label stacked>Nom du document</ion-label>
           <ion-input type="text" formControlName="nom" [(ngModel)]="nom"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>Nom du docteur</ion-label>
+          <ion-label stacked>Nom du docteur</ion-label>
           <ion-select formControlName="docteur" [(ngModel)]="docteur">
             <ion-option *ngFor="let doctor of doctorList" [value]="doctor.id">{{doctor.lastName}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label>Nature du document</ion-label>
+          <ion-label stacked>Nature du document</ion-label>
           <ion-select formControlName="nature" [(ngModel)]="nature">
             <ion-option *ngFor="let nature of natureList" [value]="nature.id">{{nature.label}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label>Source du document</ion-label>
+          <ion-label stacked>Source du document</ion-label>
           <ion-select formControlName="source" [(ngModel)]="source">
             <ion-option *ngFor="let source of sourceList" [value]="source.id">{{source.label}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label fixed>Date</ion-label>
+          <ion-label stacked>Date</ion-label>
           <ion-input type="date" formControlName="date" [(ngModel)]="date"></ion-input>
-        </ion-item>
+        </ion-item><br/>
 
-        <button ion-button (click)="choose()">Document</button>
-
-        <br><button ion-button (click)="addDocument()">Ajouter</button>
+        <button ion-button (click)="choose()"><ion-icon name="document"></ion-icon></button>
+        <button ion-button id="add-btn" (click)="addDocument()">Valider</button>
       </ion-list>
     </form>
 

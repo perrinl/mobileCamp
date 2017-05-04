@@ -24313,6 +24313,24 @@ ion-navbar.toolbar {
   }
 }
 
+page-add-document #add-btn {
+  width: 79%;
+}
+
+page-doctor .scroll-content {
+  background: url("../../assets/img/test2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: visible !important;
+}
+
+page-doctor #noDoctors {
+  text-align: center;
+}
+
+page-doctor #warning-sign {
+  opacity: 0.5;
+}
+
 page-login .scroll-content {
   background: url("../../assets/img/home_bg1.jpg") no-repeat center center fixed;
   background-size: cover;
