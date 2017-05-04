@@ -46,7 +46,7 @@ export class AddAppointmentPage {
 
         this.appointmentService.add({
             name: this.name,
-            date: new Date(this.date),
+            date: new Date(this.date + this.hour),
             doctor_id: this.doctor,
             notification_id: 1,
         }).subscribe((data) => this.navCtrl.pop(), (err) => {

@@ -33,58 +33,6 @@ import {AppointmentService} from "../providers/appointment-service";
 import {LocalNotifications} from "@ionic-native/local-notifications";
 
 @NgModule({
-<<<<<<< HEAD
-  declarations: [
-    MyApp,
-    TabsPage,
-    LoginPage,
-    RegisterPage,
-    DocumentPage,
-    DoctorPage,
-    AddDoctorPage,
-    AddDocumentPage,
-    DoctorPipe,
-    Filter,
-    ResetpasswordPage,
-    AppointmentPage,
-    AddAppointmentPage,
-    DisplayDocumentPage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    HttpModule,
-    IonicStorageModule.forRoot(),
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    TabsPage,
-    LoginPage,
-    RegisterPage,
-    DocumentPage,
-    DoctorPage,
-    AddDoctorPage,
-    AddDocumentPage,
-    ResetpasswordPage,
-    AppointmentPage,
-    AddAppointmentPage,
-    DisplayDocumentPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    LoginService,
-    DoctorService,
-    CallNumber,
-    DocumentService,
-    Camera,
-    FilePath,
-    FileChooser,
-    Transfer,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
-=======
     declarations: [
         MyApp,
         TabsPage,
@@ -135,7 +83,6 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
         LocalNotifications,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
->>>>>>> appointment
 })
 export class AppModule {
 }
