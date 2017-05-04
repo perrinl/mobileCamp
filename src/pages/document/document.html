@@ -2,13 +2,10 @@
 
   <ion-navbar>
     <ion-buttons start>
-      <button (click)="disconnected()">Déconnexion</button>
+      <button (click)="disconnected()" style="background-color: transparent"><ion-icon name="exit"></ion-icon></button>
     </ion-buttons>
     <ion-title>Documents</ion-title>
 
-    <ion-buttons end>
-      <button (click)="redirection_addDocument()"><ion-icon name="md-add"></ion-icon></button>
-    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -40,4 +37,7 @@
         </ion-item-options>
       </ion-item-sliding>
   </ion-list>
+  <ion-fab bottom right>
+    <button ion-fab mini (click)="redirection_addDocument()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 </ion-content>

@@ -1,3 +1,18 @@
 page-doctor {
+  .scroll-content {
+    background: url('../../assets/img/test2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: visible !important;
+  }
 
+  #noDoctors {
+    text-align: center;
+  }
+
+  #warning-sign {
+    opacity: 0.5;
+  }
 }
