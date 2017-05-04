@@ -7,25 +7,16 @@
         "files": {}
     },
     "installed_plugins": {
-        "ionic-plugin-keyboard": {
+        "com.megster.cordova.FileChooser": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
-        "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "cordova-plugin-file-transfer": {
@@ -34,10 +25,19 @@
         "cordova-plugin-filepath": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
-        "com.megster.cordova.FileChooser": {
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "mx.ferreyra.callnumber": {

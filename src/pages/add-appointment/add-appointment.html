@@ -28,8 +28,14 @@
             <ion-item>
                 <ion-label>Docteur</ion-label>
                 <ion-select formControlName="doctor" [(ngModel)]="doctor">
-                    <ion-option *ngFor="let doctorElement of doctorList" [value]="doctorElement.id">{{doctorElement.lastName}}</ion-option>
+                    <ion-option *ngFor="let doctorElement of doctorList" [value]="doctorElement">{{doctorElement.lastName}}</ion-option>
                 </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>Notifications</ion-label>
+                <ion-input type="number" formControlName="notificationHour" [(ngModel)]="notificationHour"></ion-input>
+                <ion-label>secondes</ion-label>
             </ion-item>
 
             <br>
@@ -37,6 +43,5 @@
 
         </ion-list>
     </form>
-
 
 </ion-content>

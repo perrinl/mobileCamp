@@ -46,7 +46,8 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
         Filter,
         ResetpasswordPage,
         AppointmentPage,
-        AddAppointmentPage
+        AddAppointmentPage,
+        DisplayDocumentPage
     ],
     imports: [
         BrowserModule,
@@ -66,7 +67,8 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
         AddDocumentPage,
         ResetpasswordPage,
         AppointmentPage,
-        AddAppointmentPage
+        AddAppointmentPage,
+        DisplayDocumentPage
     ],
     providers: [
         StatusBar,

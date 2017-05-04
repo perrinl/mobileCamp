@@ -3,7 +3,9 @@ import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angula
 import {FormBuilder, Validators} from "@angular/forms";
 import {DoctorService} from "../../providers/doctor-sercice";
 import {AppointmentService} from "../../providers/appointment-service";
-import {LocalNotifications} from "@ionic-native/local-notifications";
+import {ILocalNotification, LocalNotifications} from "@ionic-native/local-notifications";
+import * as moment from 'moment';
+import 'moment-timezone';
 
 @IonicPage()
 @Component({
@@ -17,13 +19,15 @@ export class AddAppointmentPage {
     private doctor;
     private doctorList;
     private hour;
+    private notificationHour;
 
     constructor(private localNotifications: LocalNotifications, private alertCtrl: AlertController, private appointmentService: AppointmentService, private doctorService: DoctorService, private _form: FormBuilder, public navCtrl: NavController, public navParams: NavParams) {
         this.addAppointmentForm = this._form.group({
             "name": ["", Validators.required],
             "date": ["", Validators.required],
             "doctor": ["", Validators.required],
-            "hour": ["", Validators.required]
+            "hour": ["", Validators.required],
+            "notificationHour": ["", Validators.required]
         });
     }
 
@@ -35,22 +39,27 @@ export class AddAppointmentPage {
     }
 
     addAppointment() {
+        let notificationId: number = Date.now();
         console.log(this.date);
+        console.log(this.doctor);
+
         this.localNotifications.schedule({
-            id: 2154,
-            title: 'Rappel rendez-vous fdp',
-            text: this.name,
-            at: new Date(new Date().getTime() + 3600),
-            sound: null
+            id: notificationId,
+            title: 'Rappel rendez-vous',
+            text: 'Rendez-vous avec Dr. '+ this.doctor.lastName + ' pour le ' + this.date + ' à ' + this.hour,
+            at: new Date(new Date().getTime() + this.notificationHour * 1000)
         });
 
+        // console.log(this.hour);
+        // console.log(this.date);
         this.appointmentService.add({
             name: this.name,
-            date: new Date(this.date + this.hour),
-            doctor_id: this.doctor,
-            notification_id: 1,
+            date: moment(this.date + ' ' + this.hour).toISOString(),
+            doctor_id: this.doctor.id,
+            notification_id: notificationId,
         }).subscribe((data) => this.navCtrl.pop(), (err) => {
-            this.showAlert("Erreur lors de l'ajout du médecin");
+            console.log(err);
+            this.showAlert("Erreur lors de l'ajout du rendez-vous");
         });
 
     }

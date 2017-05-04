@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {AddAppointmentPage} from "../add-appointment/add-appointment";
 import {AppointmentService} from "../../providers/appointment-service";
 import {CallNumber} from "@ionic-native/call-number";
+import {LocalNotifications} from "@ionic-native/local-notifications";
 
 @IonicPage()
 @Component({
@@ -12,7 +13,7 @@ import {CallNumber} from "@ionic-native/call-number";
 export class AppointmentPage {
     private appointmentList: any;
 
-    constructor(private callNumber : CallNumber, private appointmentService: AppointmentService, private navCtrl: NavController, public navParams: NavParams) {
+    constructor(private localNotifications: LocalNotifications, private callNumber : CallNumber, private appointmentService: AppointmentService, private navCtrl: NavController, public navParams: NavParams) {
     }
 
     ionViewWillEnter() {
@@ -43,6 +44,7 @@ export class AppointmentPage {
         this.appointmentService.delete(id).subscribe((data) => {
             for (let i = 0; i < this.appointmentList.length; ++i) {
                 if (this.appointmentList[i].id == id) {
+                    this.localNotifications.cancel(this.appointmentList[i].notificationId);
                     this.appointmentList.splice(i--, 1);
                 }
             }

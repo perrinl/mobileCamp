@@ -10,7 +10,7 @@ export class AppointmentService {
   constructor(public http: Http) {}
 
 
-  add(appointment: {name:string, date:Date, notification_id:number, doctor_id:number}) {
+  add(appointment: {name:string, date:string, notification_id:number, doctor_id:number}) {
     let headers = new Headers({ 'Authorization': localStorage.getItem('token'), 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.post("http://172.16.29.62:3000/users/"+localStorage.getItem('id')+"/appointments", JSON.stringify(appointment), options)

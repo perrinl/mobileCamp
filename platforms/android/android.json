@@ -7,29 +7,19 @@
         "files": {
             "res/xml/config.xml": {
                 "parents": {
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"FileChooser\"><param name=\"android-package\" value=\"com.megster.cordova.FileChooser\" /></feature>",
+                            "count": 1
+                        }
+                    ],
                     "/*": [
                         {
-                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
                             "count": 1
                         },
                         {
@@ -49,17 +39,27 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"CallNumber\"><param name=\"android-package\" value=\"mx.ferreyra.callnumber.CFCallNumber\" /></feature>",
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
-                        }
-                    ],
-                    "/widget": [
+                        },
                         {
-                            "xml": "<feature name=\"FileChooser\"><param name=\"android-package\" value=\"com.megster.cordova.FileChooser\" /></feature>",
+                            "xml": "<feature name=\"CallNumber\"><param name=\"android-package\" value=\"mx.ferreyra.callnumber.CFCallNumber\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -136,28 +136,19 @@
         }
     },
     "installed_plugins": {
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
-        "cordova-plugin-splashscreen": {
+        "com.megster.cordova.FileChooser": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "cordova-plugin-file": {
@@ -169,13 +160,22 @@
         "cordova-plugin-filepath": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
-        "com.megster.cordova.FileChooser": {
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "cordova-plugin-app-event": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "mx.ferreyra.callnumber": {
@@ -185,36 +185,11 @@
     "dependent_plugins": {},
     "modules": [
         {
-            "id": "ionic-plugin-keyboard.keyboard",
-            "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
-            "pluginId": "ionic-plugin-keyboard",
+            "id": "com.megster.cordova.FileChooser.FileChooser",
+            "file": "plugins/com.megster.cordova.FileChooser/www/fileChooser.js",
+            "pluginId": "com.megster.cordova.FileChooser",
             "clobbers": [
-                "cordova.plugins.Keyboard"
-            ],
-            "runs": true
-        },
-        {
-            "id": "cordova-plugin-statusbar.statusbar",
-            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-            "pluginId": "cordova-plugin-statusbar",
-            "clobbers": [
-                "window.StatusBar"
-            ]
-        },
-        {
-            "id": "cordova-plugin-device.device",
-            "file": "plugins/cordova-plugin-device/www/device.js",
-            "pluginId": "cordova-plugin-device",
-            "clobbers": [
-                "device"
-            ]
-        },
-        {
-            "id": "cordova-plugin-splashscreen.SplashScreen",
-            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-            "pluginId": "cordova-plugin-splashscreen",
-            "clobbers": [
-                "navigator.splashscreen"
+                "fileChooser"
             ]
         },
         {
@@ -247,6 +222,14 @@
             "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "CameraPopoverHandle"
+            ]
+        },
+        {
+            "id": "cordova-plugin-device.device",
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
             ]
         },
         {
@@ -447,11 +430,19 @@
             ]
         },
         {
-            "id": "com.megster.cordova.FileChooser.FileChooser",
-            "file": "plugins/com.megster.cordova.FileChooser/www/fileChooser.js",
-            "pluginId": "com.megster.cordova.FileChooser",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "pluginId": "cordova-plugin-splashscreen",
             "clobbers": [
-                "fileChooser"
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "id": "cordova-plugin-statusbar.statusbar",
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "pluginId": "cordova-plugin-statusbar",
+            "clobbers": [
+                "window.StatusBar"
             ]
         },
         {
@@ -482,6 +473,15 @@
             ]
         },
         {
+            "id": "ionic-plugin-keyboard.keyboard",
+            "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+            "pluginId": "ionic-plugin-keyboard",
+            "clobbers": [
+                "cordova.plugins.Keyboard"
+            ],
+            "runs": true
+        },
+        {
             "id": "mx.ferreyra.callnumber.CallNumber",
             "file": "plugins/mx.ferreyra.callnumber/www/CallNumber.js",
             "pluginId": "mx.ferreyra.callnumber",
@@ -491,20 +491,20 @@
         }
     ],
     "plugin_metadata": {
-        "ionic-plugin-keyboard": "2.2.1",
-        "cordova-plugin-whitelist": "1.3.1",
-        "cordova-plugin-console": "1.0.5",
-        "cordova-plugin-statusbar": "2.2.1",
-        "cordova-plugin-device": "1.1.4",
-        "cordova-plugin-splashscreen": "4.0.3",
+        "com.megster.cordova.FileChooser": "0.0.0",
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-camera": "2.4.1",
+        "cordova-plugin-console": "1.0.5",
+        "cordova-plugin-device": "1.1.4",
         "cordova-plugin-file": "4.3.3",
         "cordova-plugin-file-transfer": "1.6.3",
         "cordova-plugin-filepath": "1.0.2",
-        "com.megster.cordova.FileChooser": "0.0.0",
+        "cordova-plugin-splashscreen": "4.0.3",
+        "cordova-plugin-statusbar": "2.2.1",
+        "cordova-plugin-whitelist": "1.3.1",
         "cordova-plugin-app-event": "1.2.0",
         "de.appplant.cordova.plugin.local-notification": "0.8.4",
+        "ionic-plugin-keyboard": "2.2.1",
         "mx.ferreyra.callnumber": "0.0.2"
     }
 }
