@@ -31,6 +31,8 @@ import {AddAppointmentPage} from "../pages/add-appointment/add-appointment";
 import {AppointmentPage} from "../pages/appointment/appointment";
 import {AppointmentService} from "../providers/appointment-service";
 import {LocalNotifications} from "@ionic-native/local-notifications";
+import {DocumentPipeDocteur, DocumentPipeType} from "../pipes/documentpipe";
+import {DocumentPipeNature} from "../pipes/documentpipe";
 
 @NgModule({
     declarations: [
@@ -43,6 +45,9 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
         AddDoctorPage,
         AddDocumentPage,
         DoctorPipe,
+        DocumentPipeType,
+        DocumentPipeNature,
+        DocumentPipeDocteur,
         DisplayDocumentPage,
         Filter,
         ResetpasswordPage,
@@ -73,6 +78,9 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
         DisplayDocumentPage
     ],
     providers: [
+        DocumentPipeType,
+        DocumentPipeNature,
+        DocumentPipeDocteur,
         StatusBar,
         SplashScreen,
         LoginService,

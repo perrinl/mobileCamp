@@ -4,6 +4,8 @@ import {AddDocumentPage} from "../add-document/add-document";
 import {DocumentService} from "../../providers/document-service";
 import {DisplayDocumentPage} from '../display-document/display-document';
 import {LoginPage} from "../login/login";
+import {DoctorService} from "../../providers/doctor-sercice";
+import {DocumentPipeDocteur, DocumentPipeNature, DocumentPipeType} from "../../pipes/documentpipe";
 
 @IonicPage()
 @Component({
@@ -11,17 +13,34 @@ import {LoginPage} from "../login/login";
   templateUrl: 'document.html',
 })
 export class DocumentPage {
-  filterType : string;
+  filterType : number;
+  tabfilter: any[];
   documentList: any[];
+  documentNatureList: any[];
+  doctorList: Object[];
+  documentTypeList: Object[];
+  private typeList: Object[];
+  public test: any;
 
-  constructor(private app: App, public documentService: DocumentService, public navCtrl: NavController) {
-    this.filterType = "name";
+  constructor(public documentpipedocteur: DocumentPipeDocteur, public documentpipetype: DocumentPipeType, public documentpipenature: DocumentPipeNature, public doctorservice: DoctorService, public documentService: DocumentService, public navCtrl: NavController) {
+    this.documentTypeList = [{id:1, label:"Photo"}, {id:2, label:"Saisie directe"}, {id:3, label:"Transfert de document"}];
+    this.filterType = 0;
+    this.test = this.documentTypeList;
   }
 
   ionViewWillEnter() {
-    this.documentService.getDocuments().subscribe((data) => {
-      this.documentList = data;
-      this.filterType = "name";
+    this.doctorservice.getDoctors().subscribe((data) => {
+      this.doctorList = data;
+      this.doctorservice.getSpecialities().subscribe((data) => {
+        this.typeList = data;
+        this.documentService.getNature().subscribe((data) => {
+          this.documentNatureList = data;
+          this.documentService.getDocuments().subscribe((data) => {
+            this.documentList = data;
+            this.tabfilter = [{id:1, list:this.doctorList}, {id:2, list:this.documentTypeList}, {id:3, list:this.documentNatureList}];
+          });
+        });
+      });
     });
   }
 
@@ -37,7 +56,8 @@ export class DocumentPage {
           });
         }, (err) => console.log(err));
   }
-   disconnected() {
+
+  disconnected() {
     localStorage.clear();
     const root = this.app.getRootNav();
     root.popToRoot();
