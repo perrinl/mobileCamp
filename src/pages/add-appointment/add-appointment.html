@@ -38,10 +38,8 @@
                 <ion-label stacked>Notifications (en secondes)</ion-label>
                 <ion-input type="number" formControlName="notificationHour" [(ngModel)]="notificationHour"></ion-input>
             </ion-item><br/><br/>
-
-            <button full [disabled]="!addAppointmentForm.valid" ion-button (click)="addAppointment()">Ajouter</button>
-
         </ion-list>
+            <button id="addBtn2" full [disabled]="!addAppointmentForm.valid" ion-button (click)="addAppointment()">Ajouter</button>
     </form>
 
 </ion-content>

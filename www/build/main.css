@@ -80440,7 +80440,12 @@ ion-navbar.toolbar {
 }
 
 page-add-appointment .toolbar-background {
-  background-color: #7DC5F2;
+  background-color: dodgerblue;
+}
+
+page-add-appointment #addBtn2 {
+  margin-top: -25px;
+  background-color: dodgerblue;
 }
 
 page-add-appointment .scroll-content {
@@ -80448,7 +80453,11 @@ page-add-appointment .scroll-content {
 }
 
 page-add-doctor .toolbar-background {
-  background-color: #7DC5F2;
+  background-color: dodgerblue;
+}
+
+page-add-doctor #addBtn {
+  background-color: dodgerblue;
 }
 
 page-add-doctor .scroll-content {
@@ -80456,19 +80465,26 @@ page-add-doctor .scroll-content {
 }
 
 page-add-document .toolbar-background {
-  background-color: #7DC5F2;
+  background-color: dodgerblue;
 }
 
 page-add-document .scroll-content {
   background-color: #F7F7F7;
 }
 
-page-add-document #add-btn {
-  width: 79%;
+page-add-document .add-btn {
+  background-color: #5eb94d;
+  font-size: 16px;
+}
+
+page-add-document .pictureBtn {
+  background-color: dodgerblue;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 page-appointment .toolbar-background {
-  background-color: #7DC5F2;
+  background-color: dodgerblue;
 }
 
 page-appointment .scroll-content {
@@ -80486,7 +80502,19 @@ page-appointment #warning-sign {
 }
 
 page-display-document .toolbar-background {
-  background-color: #7DC5F2;
+  background-color: dodgerblue;
+}
+
+page-display-document #docTitle {
+  margin-bottom: 10px;
+}
+
+page-display-document .details {
+  margin-top: 5px;
+}
+
+page-display-document .content {
+  margin-top: 20px;
 }
 
 page-display-document .scroll-content {
@@ -80494,7 +80522,7 @@ page-display-document .scroll-content {
 }
 
 page-doctor .toolbar-background {
-  background-color: #7DC5F2;
+  background-color: dodgerblue;
 }
 
 page-doctor .scroll-content {
@@ -80517,7 +80545,7 @@ page-doctor #warning-sign {
 }
 
 page-document .toolbar-background {
-  background-color: #7DC5F2;
+  background-color: dodgerblue;
 }
 
 page-document .scroll-content {

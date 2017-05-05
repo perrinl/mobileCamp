@@ -19,6 +19,7 @@ export class LoginPage {
     private status: number;
     private error: any;
     public loginForm: any;
+    private tabBarElement: any;
 
     public jwtHelper: JwtHelper;
 
@@ -27,9 +28,13 @@ export class LoginPage {
             "email": ["", Validators.required],
             "password": ["", Validators.required],
         });
+        this.tabBarElement = document.querySelector('#tabs ion-tabbar-section');
         this.jwtHelper = new JwtHelper();
         if (localStorage.getItem('token') != null)
             this.navCtrl.push(TabsPage);
+    }
+    ionViewWillEnter() {
+        this.tabBarElement.style.display = 'none';
     }
 
     login() {

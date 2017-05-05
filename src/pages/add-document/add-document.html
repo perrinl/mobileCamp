@@ -12,13 +12,13 @@
 
   <div padding>
     <ion-segment [(ngModel)]="type">
-      <ion-segment-button value="1">
+      <ion-segment-button value=1>
         Photo
       </ion-segment-button>
-      <ion-segment-button value="2">
+      <ion-segment-button value=2>
         Saisie directe
       </ion-segment-button>
-      <ion-segment-button value="3">
+      <ion-segment-button value=3>
         Transfert de document
       </ion-segment-button>
     </ion-segment>
@@ -56,11 +56,11 @@
 
         <ion-item>
           <ion-label stacked>Date</ion-label>
-          <ion-input type="date" formControlName="date" [(ngModel)]="date"></ion-input>
+          <ion-datetime pickerFormat="D/MMM/YYYY" displayFormat="D/M/YYYY" formControlName="date" [(ngModel)]="date"></ion-datetime>
         </ion-item><br/>
-
-        <button ion-button (click)="cam()"><ion-icon name="camera"></ion-icon></button>
-        <button ion-button id="add-btn" (click)="addDocument()">Valider</button>
+        <img  src="{{img}}"  *ngIf="img"/>
+        <button ion-button class="pictureBtn" (click)="cam()" block><ion-icon name="camera" left></ion-icon>&nbsp;&nbsp;&nbsp;Prendre une photo</button>
+        <button ion-button class="add-btn" [disabled]="!addDocumentForm.valid" (click)="addDocument()" block >Valider</button>
       </ion-list>
     </form>
 
@@ -95,15 +95,15 @@
 
         <ion-item>
           <ion-label stacked>Date</ion-label>
-          <ion-input type="date" formControlName="date" [(ngModel)]="date"></ion-input>
+          <ion-datetime pickerFormat="D/MMM/YYYY" displayFormat="D/M/YYYY" formControlName="date" [(ngModel)]="date"></ion-datetime>
         </ion-item>
 
         <ion-item>
           <ion-label stacked>Description</ion-label>
-          <ion-textarea placeholder="yyy" rows="5" formControlName="textContent" [(ngModel)]="textContent" required></ion-textarea>
+          <ion-textarea rows="5" formControlName="textContent" [(ngModel)]="textContent" required></ion-textarea>
         </ion-item>
 
-        <br><button ion-button full (click)="addDocument()">Valider</button>
+        <br><button ion-button full block [disabled]="!addDocumentForm.valid" (click)="addDocument()" class="add-btn">Valider</button>
       </ion-list>
     </form>
 
@@ -137,11 +137,11 @@
 
         <ion-item>
           <ion-label stacked>Date</ion-label>
-          <ion-input type="date" formControlName="date" [(ngModel)]="date"></ion-input>
+          <ion-datetime pickerFormat="D/MMM/YYYY" displayFormat="D/M/YYYY" formControlName="date" [(ngModel)]="date"></ion-datetime>
         </ion-item><br/>
 
-        <button ion-button (click)="choose()"><ion-icon name="document"></ion-icon></button>
-        <button ion-button id="add-btn" (click)="addDocument()">Valider</button>
+        <button ion-button block (click)="choose()" class="pictureBtn"><ion-icon name="document"></ion-icon>&nbsp;&nbsp;&nbsp;Importez un fichier</button>
+        <button ion-button block [disabled]="!addDocumentForm.valid" id="add-btn" (click)="addDocument()" class="add-btn">Valider</button>
       </ion-list>
     </form>
 

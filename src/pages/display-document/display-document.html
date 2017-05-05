@@ -10,18 +10,18 @@
 
 <ion-content padding>
   <ion-item>
-    <h1 style="color: #3e7fef">{{obj.name}}</h1>
+    <h1 id="docTitle" style="color: #3e7fef">{{obj.name}}</h1>
     <p>Date : {{obj.date | date: 'dd/MM/yyyy' }}</p>
-    <p>Nature : {{obj.DocumentNature.label}}</p>
-    <p>Source : {{obj.DocumentSource.label}}</p>
-    <p>Type : {{obj.DocumentType.label}}</p>
+    <p class="details">Nature : {{obj.DocumentNature.label}}</p>
+    <p class="details">Source : {{obj.DocumentSource.label}}</p>
+    <p class="details">Type : {{obj.DocumentType.label}}</p>
     <div *ngIf="obj.DocumentTypeId == 1">
-      <img src="{{obj.fileUrl}}" />
+      <img class="content" src="{{obj.fileUrl}}" />
     </div>
     <div *ngIf="obj.DocumentTypeId == 2">
-      <p>{{obj.textContent}}</p>
+      <p class="content">{{obj.textContent}}</p>
     </div>
-    <div *ngIf="obj.DocumentTypeId == 3">
+    <div class="content" *ngIf="obj.DocumentTypeId == 3">
 
     </div>
   </ion-item>

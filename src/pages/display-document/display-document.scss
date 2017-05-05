@@ -1,6 +1,18 @@
 page-display-document {
   .toolbar-background {
-    background-color: #7DC5F2;
+    background-color: dodgerblue;
+  }
+
+  #docTitle {
+    margin-bottom: 10px;
+  }
+
+  .details {
+    margin-top: 5px;
+  }
+
+  .content {
+    margin-top: 20px;
   }
 
   .scroll-content {

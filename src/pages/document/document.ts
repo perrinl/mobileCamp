@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, App} from 'ionic-angular';
 import {AddDocumentPage} from "../add-document/add-document";
 import {DocumentService} from "../../providers/document-service";
 import {DisplayDocumentPage} from '../display-document/display-document';
@@ -14,7 +14,7 @@ export class DocumentPage {
   filterType : string;
   documentList: any[];
 
-  constructor(public documentService: DocumentService, public navCtrl: NavController) {
+  constructor(private app: App, public documentService: DocumentService, public navCtrl: NavController) {
     this.filterType = "name";
   }
 
@@ -37,9 +37,10 @@ export class DocumentPage {
           });
         }, (err) => console.log(err));
   }
-  disconnected() {
+   disconnected() {
     localStorage.clear();
-    this.navCtrl.push(LoginPage);
+    const root = this.app.getRootNav();
+    root.popToRoot();
   }
 
   displayDocumentRedirection(obj: Object) {
