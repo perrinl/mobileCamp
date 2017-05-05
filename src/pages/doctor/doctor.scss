@@ -1,11 +1,21 @@
 page-doctor {
+  .toolbar-background {
+    background-color: #7DC5F2;
+  }
+  
   .scroll-content {
-    background: url('../../assets/img/test2.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow: visible !important;
+  //   background: url('../../assets/img/test2.jpg') no-repeat center center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  //   overflow: visible !important;
+  background-color: #F7F7F7;
+  }
+
+  #header-list {
+    position: relative;
+    top: 12px;
   }
 
   #noDoctors {
@@ -13,6 +23,8 @@ page-doctor {
   }
 
   #warning-sign {
+    margin-top: 13%;
     opacity: 0.5;
+    width: 75%;
   }
 }

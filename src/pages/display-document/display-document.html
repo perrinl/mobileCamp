@@ -1,25 +1,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Document</ion-title>
+    <ion-title>
+      <font style="color: white; letter-spacing: 1.5px">Détails du document</font>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
-<p>Nom :{{obj.name}}</p>
-  <p>Date : {{obj.date}}</p>
-  <p>Nature : {{obj.DocumentNature.label}}</p>
-  <p>Source : {{obj.DocumentSource.label}}</p>
-  <p>Type : {{obj.DocumentType.label}}</p>
-  <div *ngIf="obj.DocumentTypeId == 1">
-    <img src="{{obj.fileUrl}}" />
-  </div>
-  <div *ngIf="obj.DocumentTypeId == 2">
-    <p>{{obj.textContent}}</p>
-  </div>
-  <div *ngIf="obj.DocumentTypeId == 3">
+  <ion-item>
+    <h1 style="color: #3e7fef">{{obj.name}}</h1>
+    <p>Date : {{obj.date | date: 'dd/MM/yyyy' }}</p>
+    <p>Nature : {{obj.DocumentNature.label}}</p>
+    <p>Source : {{obj.DocumentSource.label}}</p>
+    <p>Type : {{obj.DocumentType.label}}</p>
+    <div *ngIf="obj.DocumentTypeId == 1">
+      <img src="{{obj.fileUrl}}" />
+    </div>
+    <div *ngIf="obj.DocumentTypeId == 2">
+      <p>{{obj.textContent}}</p>
+    </div>
+    <div *ngIf="obj.DocumentTypeId == 3">
 
-  </div>
-
+    </div>
+  </ion-item>
 </ion-content>

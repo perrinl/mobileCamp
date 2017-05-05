@@ -1,6 +1,8 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Docteurs</ion-title>
+    <ion-title>
+      <font style="color: white; letter-spacing: 1.5px">Docteurs</font>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,10 +14,9 @@
   <ion-list *ngIf="doctorList && doctorList.length > 0; else addDoctor">
     <div *ngFor="let speciality of typeList">
 
-      <ion-list-header>
+      <ion-list-header id="header-list">
         {{speciality.label}}
       </ion-list-header>
-
       <ion-item-sliding *ngFor="let doctor of doctorList | doctorpipe:speciality.id">
         <ion-item>
           <ion-avatar item-left>

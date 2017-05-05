@@ -2,28 +2,33 @@
 
   <ion-navbar>
     <ion-buttons start>
-      <button (click)="disconnected()" style="background-color: transparent"><ion-icon name="exit"></ion-icon></button>
+      <button (click)="disconnected()" style="background-color: transparent"><ion-icon name="ios-exit-outline" md="md-exit" style="color: white"></ion-icon></button>
     </ion-buttons>
-    <ion-title>Documents</ion-title>
+    <ion-title>
+      <font style="color: white; letter-spacing: 1.5px">Documents</font>
+    </ion-title>
 
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
-  <ion-select [(ngModel)]="filterType">
-    <ion-option value="name" selected>Nom</ion-option>
-    <ion-option value="DoctorId">Docteur</ion-option>
-    <ion-option value="date">Date</ion-option>
-    <ion-option value="DocumentTypeId">Type</ion-option>
-  </ion-select>
+  <ion-item full>
+    <ion-label>Trier par</ion-label>
+    <ion-select full interface="action-sheet" [(ngModel)]="filterType">
+      <ion-option value="name" selected>Nom</ion-option>
+      <ion-option value="DoctorId">Docteur</ion-option>
+      <ion-option value="date">Date</ion-option>
+      <ion-option value="DocumentTypeId">Type</ion-option>
+    </ion-select>
+  </ion-item><br/>
   <ion-list>
       <ion-item-sliding *ngFor="let document of documentList | filter: filterType">
         <button ion-item (click)="displayDocumentRedirection(document)">
-          <h2>{{ document.name }}</h2>
-          <p>Dr : {{ document.Doctor.lastName }}</p>
-          <p>Le {{ document.date  | date: 'dd/MM/yyyy' }}</p>
-          <p>{{ document.DocumentType.label }}</p>
+          <h2 style="color: #3e7fef; text-align: center"><strong>{{ document.name }}</strong></h2>
+          <p  style="text-align: center"><small><ion-icon name="ios-clock-outline" ></ion-icon></small> Le {{ document.date  | date: 'dd/MM/yyyy' }}</p>
+          <p  style="text-align: center"><small><ion-icon name="ios-pulse-outline" ></ion-icon></small> Dr. {{ document.Doctor.lastName }}</p>
+          <p  style="text-align: center">{{ document.DocumentType.label }}</p>
         </button>
         <ion-item-options>
           <button ion-button color="danger" (click)="delete(document.id)" icon-left>

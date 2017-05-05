@@ -1,7 +1,9 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>Ajouter un rendez-vous</ion-title>
+      <ion-title>
+        <font style="color: white; letter-spacing: 1.3px">Ajouter rendez-vous</font>
+      </ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -11,35 +13,33 @@
     <form [formGroup]="addAppointmentForm">
         <ion-list>
             <ion-item>
-                <ion-label fixed>Nom</ion-label>
+                <ion-label stacked>Nom</ion-label>
                 <ion-input type="text" formControlName="name" [(ngModel)]="name"></ion-input>
             </ion-item>
 
             <ion-item>
-                <ion-label fixed>Date</ion-label>
+                <ion-label stacked>Date</ion-label>
                 <ion-datetime pickerFormat="D/MMM/YYYY" displayFormat="D/M/YYYY" formControlName="date" [(ngModel)]="date"></ion-datetime>
             </ion-item>
 
             <ion-item>
-                <ion-label fixed>Heure</ion-label>
+                <ion-label stacked>Heure</ion-label>
                 <ion-datetime pickerFormat="HH:mm" formControlName="hour" [(ngModel)]="hour"></ion-datetime>
             </ion-item>
 
             <ion-item>
-                <ion-label>Docteur</ion-label>
+                <ion-label stacked>Docteur</ion-label>
                 <ion-select formControlName="doctor" [(ngModel)]="doctor">
                     <ion-option *ngFor="let doctorElement of doctorList" [value]="doctorElement">{{doctorElement.lastName}}</ion-option>
                 </ion-select>
             </ion-item>
 
             <ion-item>
-                <ion-label fixed>Notifications</ion-label>
+                <ion-label stacked>Notifications (en secondes)</ion-label>
                 <ion-input type="number" formControlName="notificationHour" [(ngModel)]="notificationHour"></ion-input>
-                <ion-label>secondes</ion-label>
-            </ion-item>
+            </ion-item><br/><br/>
 
-            <br>
-            <button [disabled]="!addAppointmentForm.valid" ion-button (click)="addAppointment()">Ajouter</button>
+            <button full [disabled]="!addAppointmentForm.valid" ion-button (click)="addAppointment()">Ajouter</button>
 
         </ion-list>
     </form>
