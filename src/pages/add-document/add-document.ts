@@ -36,7 +36,7 @@ export class AddDocumentPage {
             "nature": ["", Validators.required],
             "source": ["", Validators.required],
             "date": ["", Validators.required],
-            "textContent": [""],
+            "textContent": ["", Validators.nullValidator],
         });
         this.type = 1;
     }
@@ -100,6 +100,7 @@ export class AddDocumentPage {
         };
 
         this.camera.getPicture(options).then((imageData) => {
+            console.log(imageData);
             this.img = imageData;
             this.uploadFile(imageData);
         }, (err) => {

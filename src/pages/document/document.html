@@ -28,7 +28,7 @@
   <ion-list *ngIf="documentList && documentList.length > 0">
     <div *ngFor="let speciality of tabfilter[filterType].list">
 
-      <ion-list-header id="header-list">
+      <ion-list-header class="header-list">
         {{filterType == 0 ? speciality.lastName : speciality.label}}
       </ion-list-header>
       <!-- | filter: filterType -->

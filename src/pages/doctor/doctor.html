@@ -20,7 +20,7 @@
       <ion-item-sliding *ngFor="let doctor of doctorList | doctorpipe:speciality.id">
         <ion-item>
           <ion-avatar item-left>
-            <img src="../../assets/img/default_pp.png">
+            <img src="assets/img/default_pp.png">
           </ion-avatar>
           <h2>Dr. {{ doctor.lastName }}</h2>
           <p><small>{{ doctor.address }}</small></p>
@@ -50,7 +50,7 @@
 
   <ng-template #addDoctor>
     <div id="noDoctors">
-      <img src="../assets/img/sign-warning-icon.png" id="warning-sign"/>
+      <img src="assets/img/sign-warning-icon.png" id="warning-sign"/>
       <p><strong>Aucun médecin</strong><br/><br/><small>Veuillez ajouter un médecin à l'aide du bouton ci-dessous.</small></p>
     </div>
   </ng-template>
