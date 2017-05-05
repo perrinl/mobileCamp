@@ -22,7 +22,7 @@ export class DocumentPage {
   private typeList: Object[];
   public test: any;
 
-  constructor(public documentpipedocteur: DocumentPipeDocteur, public documentpipetype: DocumentPipeType, public documentpipenature: DocumentPipeNature, public doctorservice: DoctorService, public documentService: DocumentService, public navCtrl: NavController) {
+  constructor(private app: App, public documentpipedocteur: DocumentPipeDocteur, public documentpipetype: DocumentPipeType, public documentpipenature: DocumentPipeNature, public doctorservice: DoctorService, public documentService: DocumentService, public navCtrl: NavController) {
     this.documentTypeList = [{id:1, label:"Photo"}, {id:2, label:"Saisie directe"}, {id:3, label:"Transfert de document"}];
     this.filterType = 0;
     this.test = this.documentTypeList;
