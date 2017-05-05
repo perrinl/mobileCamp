@@ -11,14 +11,14 @@ export class LoginService {
   login(user:{email:string, password:string}) {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
-      return this.http.post("http://localhost:3000/login", JSON.stringify(user), options)
+      return this.http.post("http://172.16.29.62:3000/login", JSON.stringify(user), options)
           .map(response => response.json());
   }
 
   register(user: {email:string, password:string, firstName:string, lastName:string}) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post("http://localhost:3000/users", JSON.stringify(user), options)
+    return this.http.post("http://172.16.29.62:3000/users", JSON.stringify(user), options)
       .map(response => response.json());
   }
 

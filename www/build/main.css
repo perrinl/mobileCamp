@@ -34520,7 +34520,7 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-md .tabbar {
-  background: #7DC5F2;
+  background: #f8f8f8;
 }
 
 .tabs-md .tab-button {
@@ -34532,7 +34532,7 @@ ion-spinner.spinner-paused svg {
 
 .tabs-md .tab-button[aria-selected=true] {
   padding: 0;
-  color: white;
+  color: #488aff;
 }
 
 .tabs-md .tab-button-text {
@@ -34576,7 +34576,7 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
-  color: white;
+  color: #488aff;
   -webkit-transform: translate3d(0, -2px, 0);
   transform: translate3d(0, -2px, 0);
 }

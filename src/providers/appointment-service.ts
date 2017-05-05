@@ -13,21 +13,21 @@ export class AppointmentService {
   add(appointment: {name:string, date:string, notification_id:number, doctor_id:number}) {
     let headers = new Headers({ 'Authorization': localStorage.getItem('token'), 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post("http://localhost:3000/users/"+localStorage.getItem('id')+"/appointments", JSON.stringify(appointment), options)
+    return this.http.post("http://172.16.29.62:3000/users/"+localStorage.getItem('id')+"/appointments", JSON.stringify(appointment), options)
         .map(response => response.json());
   }
 
   getAppointments() {
     let headers = new Headers({ 'Authorization': localStorage.getItem('token') });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://localhost:3000/users/"+localStorage.getItem('id')+"/appointments", options)
+    return this.http.get("http://172.16.29.62:3000/users/"+localStorage.getItem('id')+"/appointments", options)
         .map(response => response.json());
   }
 
   delete(id:number) {
     let headers = new Headers({ 'Authorization': localStorage.getItem('token') });
     let options = new RequestOptions({ headers: headers });
-    return this.http.delete("http://localhost:3000/users/"+localStorage.getItem('id')+"/appointments/"+id, options)
+    return this.http.delete("http://172.16.29.62:3000/users/"+localStorage.getItem('id')+"/appointments/"+id, options)
         .map(response => response.json());
   }
 }

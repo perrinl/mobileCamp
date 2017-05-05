@@ -16,14 +16,23 @@
   <ion-item full>
     <ion-label>Trier par</ion-label>
     <ion-select full interface="action-sheet" [(ngModel)]="filterType">
-      <ion-option value="name" selected>Nom</ion-option>
+      <!--<ion-option value="name" selected>Nom</ion-option>
       <ion-option value="DoctorId">Docteur</ion-option>
       <ion-option value="date">Date</ion-option>
-      <ion-option value="DocumentTypeId">Type</ion-option>
+      <ion-option value="DocumentTypeId">Type</ion-option>-->
+      <ion-option value="0">Docteur</ion-option>
+      <ion-option value="1">Type</ion-option>
+      <ion-option value="2">Nature</ion-option>
     </ion-select>
   </ion-item><br/>
-  <ion-list>
-      <ion-item-sliding *ngFor="let document of documentList | filter: filterType">
+  <ion-list *ngIf="documentList && documentList.length > 0">
+    <div *ngFor="let speciality of tabfilter[filterType].list">
+
+      <ion-list-header id="header-list">
+        {{filterType == 0 ? speciality.lastName : speciality.label}}
+      </ion-list-header>
+      <!-- | filter: filterType -->
+      <ion-item-sliding *ngFor="let document of documentList | documentpipetype:speciality.id:filterType">
         <button ion-item (click)="displayDocumentRedirection(document)">
           <h2 style="color: #3e7fef; text-align: center"><strong>{{ document.name }}</strong></h2>
           <p  style="text-align: center"><small><ion-icon name="ios-clock-outline" ></ion-icon></small> Le {{ document.date  | date: 'dd/MM/yyyy' }}</p>
@@ -41,6 +50,7 @@
           </button>
         </ion-item-options>
       </ion-item-sliding>
+    </div>
   </ion-list>
   <ion-fab bottom right>
     <button ion-fab mini (click)="redirection_addDocument()"><ion-icon name="add"></ion-icon></button>
