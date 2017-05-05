@@ -42,13 +42,16 @@
         },
         "mx.ferreyra.callnumber": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-file-opener2": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
-        },
-        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "cordova-plugin-app-event": {

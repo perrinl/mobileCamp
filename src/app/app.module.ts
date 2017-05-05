@@ -33,6 +33,8 @@ import {AppointmentService} from "../providers/appointment-service";
 import {LocalNotifications} from "@ionic-native/local-notifications";
 import {DocumentPipeDocteur, DocumentPipeType} from "../pipes/documentpipe";
 import {DocumentPipeNature} from "../pipes/documentpipe";
+import {FileOpener} from "@ionic-native/file-opener";
+import {File} from "@ionic-native/file";
 
 @NgModule({
     declarations: [
@@ -93,6 +95,8 @@ import {DocumentPipeNature} from "../pipes/documentpipe";
         Transfer,
         AppointmentService,
         LocalNotifications,
+        FileOpener,
+        File,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })

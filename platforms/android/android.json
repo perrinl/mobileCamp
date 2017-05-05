@@ -61,6 +61,10 @@
                         {
                             "xml": "<feature name=\"CallNumber\"><param name=\"android-package\" value=\"mx.ferreyra.callnumber.CFCallNumber\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FileOpener2\"><param name=\"android-package\" value=\"io.github.pwlin.cordova.plugins.fileopener2.FileOpener2\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -74,7 +78,7 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.CALL_PHONE\" />",
@@ -118,6 +122,10 @@
                         },
                         {
                             "xml": "<activity android:exported=\"false\" android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.notification.ClickActivity\" android:theme=\"@android:style/Theme.NoDisplay\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<provider android:authorities=\"com.ionicframework.capitalsantefront798628.opener.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"io.github.pwlin.cordova.plugins.fileopener2.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/opener_paths\" /></provider>",
                             "count": 1
                         }
                     ],
@@ -179,6 +187,9 @@
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         },
         "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
+        },
+        "cordova-plugin-file-opener2": {
             "PACKAGE_NAME": "com.ionicframework.capitalsantefront798628"
         }
     },
@@ -488,6 +499,14 @@
             "clobbers": [
                 "call"
             ]
+        },
+        {
+            "id": "cordova-plugin-file-opener2.FileOpener2",
+            "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
+            "pluginId": "cordova-plugin-file-opener2",
+            "clobbers": [
+                "cordova.plugins.fileOpener2"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -505,6 +524,7 @@
         "cordova-plugin-app-event": "1.2.0",
         "de.appplant.cordova.plugin.local-notification": "0.8.4",
         "ionic-plugin-keyboard": "2.2.1",
-        "mx.ferreyra.callnumber": "0.0.2"
+        "mx.ferreyra.callnumber": "0.0.2",
+        "cordova-plugin-file-opener2": "2.0.15"
     }
 }

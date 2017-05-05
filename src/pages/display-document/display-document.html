@@ -17,12 +17,17 @@
     <p class="details">Type : {{obj.DocumentType.label}}</p>
     <div *ngIf="obj.DocumentTypeId == 1">
       <img class="content" src="{{obj.fileUrl}}" />
+      <br>
+      <button ion-button block (click)="downloadDocument()">Télécharger le document</button>
     </div>
     <div *ngIf="obj.DocumentTypeId == 2">
       <p class="content">{{obj.textContent}}</p>
-    </div>
-    <div class="content" *ngIf="obj.DocumentTypeId == 3">
 
     </div>
+    <div class="content" *ngIf="obj.DocumentTypeId == 3">
+      <br>
+      <button ion-button block (click)="downloadDocument()">Télécharger le document</button>
+    </div>
+
   </ion-item>
 </ion-content>

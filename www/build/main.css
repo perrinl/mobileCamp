@@ -80517,7 +80517,8 @@ page-display-document .content {
   margin-top: 20px;
 }
 
-page-display-document .scroll-content {
+page-display-document .he
+.scroll-content {
   background-color: #F7F7F7;
 }
 
@@ -80552,15 +80553,11 @@ page-document .scroll-content {
   background-color: #F7F7F7;
 }
 
-page-document .toolbar-background {
-  background-color: #7DC5F2;
-}
-
 page-document .scroll-content {
   background-color: #F7F7F7;
 }
 
-page-document #header-list {
+page-document .header-list {
   position: relative;
   top: 12px;
 }
@@ -80576,7 +80573,7 @@ page-document #warning-sign {
 }
 
 page-login .scroll-content {
-  background: url("../../assets/img/home_bg1.jpg") no-repeat center center fixed;
+  background: url("../assets/img/home_bg1.jpg") no-repeat center center fixed;
   background-size: cover;
   overflow: visible !important;
 }
@@ -80611,7 +80608,7 @@ page-login #register {
 }
 
 page-register .scroll-content {
-  background: url("../../assets/img/home_bg1.jpg") no-repeat center center fixed;
+  background: url("../assets/img/home_bg1.jpg") no-repeat center center fixed;
   background-size: cover;
   overflow: visible !important;
 }
@@ -80632,7 +80629,7 @@ page-register #reg-button {
 }
 
 page-resetpassword .scroll-content {
-  background: url("../../assets/img/home_bg1.jpg") no-repeat center center fixed;
+  background: url("../assets/img/home_bg1.jpg") no-repeat center center fixed;
   background-size: cover;
   overflow: visible !important;
 }
